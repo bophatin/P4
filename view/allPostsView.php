@@ -21,18 +21,17 @@
 	</header>
 
 	<section id="wrapper-1">
-		<?php var_dump($posts) ?>
 		<?php foreach($posts as $post): ?>
 
 			<article class="line-post-1">
 					<div class="left-bloc">
-						<div class="num-art"><span>0<?= $post->id ?></span></div>
+						<div class="num-art"><span>0<?= $post->id(); ?></span></div>
 						<img alt src=""/>
 					</div>
 					<div class="extrait-art">
-						<p class="title-art"><?= $post->title ?></p>
-						<p><?= $post->content_post ?></p>
-						<button><a href="">Lire le chapitre</a></button>	
+						<p class="title-art"><?= $post->title(); ?></p>
+						<p><?= $post->contentPost(); ?></p>
+						<button><a href="index.php?p=posts$id=<?=$post->id();?>">Lire le chapitre</a></button>	
 					</div>
 			</article>
 
