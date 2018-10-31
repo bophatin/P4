@@ -1,4 +1,6 @@
 <?php
+require_once 'Database.php';
+
 
 class PostManager {
 
@@ -56,7 +58,7 @@ class PostManager {
 	public function getPost() {
 		// Retourne la liste de tous les articles
 		$chaps = [];
-		$q = $this->_db->query('SELECT id, title, date_post, content_post FROM post');
+		$q = $this->_db->getPDO()->query('SELECT * FROM post ORDER BY id DESC');
 
 		while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
 			$chaps[] = new Post($donnees);
@@ -64,7 +66,7 @@ class PostManager {
 		return $chaps;
 	}
 
-	public function setDb(PDO $db) {
+	public function setDb($db) {
 		$this->_db = $db;
 	}
 }

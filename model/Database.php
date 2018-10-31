@@ -6,8 +6,8 @@ class Database {
 	private $db_name;
 	private $db_user;
 	private $db_pass;
-	private $db_host;
-	*/
+	private $db_host;*/
+	
 	private $pdo;
 
 	const DB_HOST = 'host=localhost';
@@ -24,20 +24,24 @@ class Database {
 		$this->$db_host = $db_host;
 	}
 	*/
-	
+
 	public function getPDO() {
 		if($this->pdo === null) {
 			$pdo = new PDO('mysql:' .self::DB_HOST. ';' .self::DB_NAME. ';' .self::DB_CHARSET, self::DB_USER, self::DB_PASS);
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
 			$this->pdo = $pdo;
-		}
-		return $pdo;
-	}
+		} 
+		return $this->pdo;
+	} 
 
+	/*
 	public function query($statement) {
 		$req = $this->getPDO()->query($statement);
 		$data = $req->fetchAll(PDO::FETCH_OBJ);
 		return $data;
-	}
+	}*/
 
-}
+} 
+
+
+

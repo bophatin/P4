@@ -7,8 +7,8 @@ class Autoloader {
 		/*echo "ok function registrer marche <br/>";*/
 	}
 
-	static function autoload($model_name) {
-		require 'model/' . $model_name . '.php';
+	static function autoload($class_name) {
+		require 'model/' . $class_name . '.php';
 		/*echo "ok function autoload marche <br/>"; */
 	}
 

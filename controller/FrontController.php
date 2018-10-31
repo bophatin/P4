@@ -2,10 +2,9 @@
 
 class FrontController {
 
-	public static function getPosts() {
-		$postManager = new PostManager();
-		$posts = $postManager->getPost();
-		require 'model/allPostsview.php';
+	public static function getPosts($db) {
+		$list = new PostManager($db);
+		$posts = $list->getPost();
+		require 'view/allPostsView.php';
 	}
-
 } 
