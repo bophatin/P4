@@ -4,6 +4,7 @@ require 'model/Autoloader.php';
 Autoloader::register();
 
 
+
 if (isset($_GET['p'])) {
 	$p = $_GET['p'];
 } else {
@@ -15,9 +16,8 @@ $db = new Database('blog');
 
 
 if ($p === 'allPostsView') {
-	require 'view/allPostsView.php';
-	require 'controller/Frontcontroller.php';
-	Frontcontroller::getPosts();
+	require 'controller/FrontController.php';
+	FrontController::getPosts($db);
 }
 
 if ($p === 'indexView') {
