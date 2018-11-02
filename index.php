@@ -15,16 +15,18 @@ if (isset($_GET['p'])) {
 $db = new Database('blog');
 
 
-if ($p === 'allPostsView') {
-	require 'controller/FrontController.php';
-	FrontController::getPosts($db);
-}
 
 if ($p === 'indexView') {
 	require 'view/indexView.php';
 }
 
+if ($p === 'allPostsView') {
+	require 'controller/FrontController.php';
+	FrontController::getPosts($db);
+}
+
 if ($p === 'postView') {
-	require 'view/postView.php';
+	require 'controller/FrontController.php';
+	FrontController::getArt($db);
 }
 
