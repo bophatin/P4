@@ -16,13 +16,11 @@
 <body>
 
 	<header>
-
-		<?php foreach($db->query('SELECT * FROM post') as $posts): ?>
-		<h1 class="title">Chapitre <?= $posts->id ?></h1>
+		<h1 class="title">Chapitre <?= $datas->id(); ?></h1>
 		<nav>
 			<ul>
-				<li><?= $posts->title ?></li>
-				<li>Paru le 19 novembre 2019</li>
+				<li><?= $datas->title(); ?></li>
+				<li>Paru le <?= $datas->datePost(); ?></li>
 			</ul>
 		</nav>
 	</header>
@@ -30,9 +28,7 @@
 	<section id="wrapper-art">
 		<div class="container-art">
 			<button class="back-button">Retour</button>
-			<p class="content"></p>
-		<?php endforeach ?>
-
+			<p class="content"><?= $datas->contentPost(); ?></p>
 		</div>
 	</section>
 

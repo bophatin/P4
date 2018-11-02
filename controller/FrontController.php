@@ -7,4 +7,10 @@ class FrontController {
 		$posts = $list->getPost();
 		require 'view/allPostsView.php';
 	}
+
+	public static function getArt($id) {
+		$art = new PostManager($id);
+		$datas = $art->get($id);
+		require 'view/postView.php';
+	}
 } 

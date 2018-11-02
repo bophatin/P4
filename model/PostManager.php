@@ -28,7 +28,7 @@ class PostManager {
 	public function get($id) {
 		$id = (int) $id;
 		// Exécute une requête de type SELECT (avec une clause type WHERE ?)
-		$q = $this->_db->query('SELECT id, title, date_post, content_post FROM post WHERE id = '.$id);
+		$q = $this->_db->getPDO()->query('SELECT * FROM post WHERE id =' .$id);
 		$donnees = $q->fetch(PDO::FETCH_ASSOC);
 
 		return new Post($donnees);

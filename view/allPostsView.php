@@ -30,8 +30,8 @@
 					</div>
 					<div class="extrait-art">
 						<p class="title-art"><?= $post->title(); ?></p>
-						<p><?= $post->contentPost(); ?></p>
-						<button><a href="index.php?p=posts$id=<?=$post->id();?>">Lire le chapitre</a></button>	
+						<p><?= substr($post->contentPost(), 0, 300) .'...' ?></p>
+						<button><a href="index.php?p=postView&id=<?=$post->id();?>">Lire le chapitre</a></button>	
 					</div>
 			</article>
 

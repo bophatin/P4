@@ -20,6 +20,9 @@ class Post {
 	// Hydratation de l'objet en passant des valeurs
 	public function hydrate(array $donnees) {
 
+		if (isset($donnees['id'])) {
+			$this->setId($donnees['id']);
+		}
 		if (isset($donnees['title'])) {
 		    $this->setTitle($donnees['title']);
 		}

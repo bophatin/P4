@@ -74,7 +74,7 @@ a:hover {
 #wrapper-1 {
 	padding-top: 200px;
 	background: #dcd6cc;
-	height: 800px;
+	height: 770px;
 }
 
 .container-1 {
@@ -124,7 +124,6 @@ a:hover {
 .container-2 {
 	display: flex;
 	max-width: 1600px;
-	height: 1000px;
 	margin:auto;
 	margin-top: 250px;
 }
@@ -139,7 +138,7 @@ h2 {
 
 .left-art {
 	width: 800px;
-	text-align: center;	
+	text-align: center;
 	/* align-self:center;*/
 }
 
