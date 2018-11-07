@@ -2,15 +2,16 @@
 
 class FrontController {
 
-	public static function getPosts($db) {
-		$list = new PostManager($db);
+	public static function getPosts() {
+		$list = new PostManager();
 		$posts = $list->getPost();
 		require 'view/allPostsView.php';
 	}
 
-	public static function getArt($id) {
-		$art = new PostManager($id);
-		$datas = $art->get($id);
+	public static function getArt() {
+		$article = new PostManager();
+		$id = htmlspecialchars(($_GET['id']));
+		$datas = $article->get($id);
 		require 'view/postView.php';
 	}
 } 

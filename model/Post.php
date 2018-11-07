@@ -9,22 +9,21 @@ class Post {
 
 
 	// Rajouter methode construct et appeler methode d'hydratation dedans 
-	public function __construct(array $donnees) {
-        if(!empty($donnees)){
+	public function __construct($donnees) {
+		if(!empty($donnees)){
         	$this->hydrate($donnees);
     	} else {
-    		var_dump('PB CONSTRUCTEUR HYDRATE');
+    		var_dump('PB CONSTRUCTEUR HYDRATE <br/>');
     	}
 	}
 
 	// Hydratation de l'objet en passant des valeurs
 	public function hydrate(array $donnees) {
-
 		if (isset($donnees['id'])) {
-			$this->setId($donnees['id']);
+		    $this->setId($donnees['id']);
 		}
-		if (isset($donnees['title'])) {
-		    $this->setTitle($donnees['title']);
+		if (isset($donnees['title_post'])) {
+		    $this->setTitle($donnees['title_post']);
 		}
 		if (isset($donnees['date_post'])) {
 		    $this->setDatePost($donnees['date_post']);

@@ -1,6 +1,6 @@
 <?php
 
-class Database {
+abstract class Database {
 
 	/*
 	private $db_name;
@@ -8,7 +8,7 @@ class Database {
 	private $db_pass;
 	private $db_host;*/
 	
-	private $pdo;
+	private static $pdo;
 
 	const DB_HOST = 'host=localhost';
 	const DB_NAME = 'dbname=P4';
@@ -25,18 +25,18 @@ class Database {
 	}
 	*/
 
-	public function getPDO() {
-		if($this->pdo === null) {
+	public static function getPDO() {
+		if(self::$pdo === null) {
 			$pdo = new PDO('mysql:' .self::DB_HOST. ';' .self::DB_NAME. ';' .self::DB_CHARSET, self::DB_USER, self::DB_PASS);
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-			$this->pdo = $pdo;
+			self::$pdo = $pdo;
 		} 
-		return $this->pdo;
+		return self::$pdo;
 	} 
 
-	/*
-	public function query($statement) {
-		$req = $this->getPDO()->query($statement);
+	
+	/*public static function query($statement) {
+		$req = self::$pdo->query($statement);
 		$data = $req->fetchAll(PDO::FETCH_OBJ);
 		return $data;
 	}*/
