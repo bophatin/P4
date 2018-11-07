@@ -3,6 +3,8 @@
 require 'model/Autoloader.php';
 Autoloader::register();
 
+require 'controller/FrontController.php';
+
 
 
 if (isset($_GET['p'])) {
@@ -12,21 +14,20 @@ if (isset($_GET['p'])) {
 }
 
 
-$db = new Database('blog');
-
-
 
 if ($p === 'indexView') {
 	require 'view/indexView.php';
 }
 
 if ($p === 'allPostsView') {
-	require 'controller/FrontController.php';
-	FrontController::getPosts($db);
+	FrontController::getPosts();
 }
 
 if ($p === 'postView') {
-	require 'controller/FrontController.php';
-	FrontController::getArt($db);
+	if (isset($_GET['id']) AND !empty($_GET['id'])) {
+		FrontController::getArt();
+	} else {
+		die('Erreur');
+	}
 }
 
