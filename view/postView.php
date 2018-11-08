@@ -25,10 +25,25 @@
 		</nav>
 	</header>
 
-	<section id="wrapper-art">
+	<section>
 		<div class="container-art">
-			<button class="back-button">Retour</button>
+			<button class="back-button"><a href="index.php?p=allPostsView">Retour</a></button>
 			<p class="content"><?= $datas->contentPost(); ?></p>
+		</div>
+	</section>
+
+	<section id="wrapper-comment">
+		<div class="container-comment">
+			<h2>Any reactions ?</h2>
+			<div class="form">
+				<form method="post">
+					<p><label for="nom">Nom</label></p>
+					<p><input type="text" name="nom"></p>
+					<textarea name="textarea" placeholder="Commentaire" rows="5" cols="40"></textarea>
+					<br/>
+					<input type="submit" value="send message" class="button">
+				</form>
+			</div>
 		</div>
 	</section>
 
