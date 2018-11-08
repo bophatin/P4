@@ -4,17 +4,21 @@ html body {
 }
 
 ::selection {
-        background:#6e8153;
-        color:white;
+    background:#6e8153;
+    color:white;
 }
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 
 /* HEADER */
 
 header {
 	display: flex;
 	flex-direction: column;
-	padding-top: 40px;
-	
 }
 
 .title {
@@ -45,22 +49,106 @@ nav li {
 	padding-right: 20px;
 }
 
+
 /* SECTION 1 */
 
 .container-art {
-	position: relative;
 	max-width: 1400px;
-	height: 700px;
 	background: #dcd6cc;
-	display: flex;
 	margin:auto;
 	margin-top: 50px;
+	padding-bottom: 120px;
 }
 
 .back-button {
-	position: absolute;
 	font-family: 'Cormorant Garamond', sans-serif;
 	font-size: 14px;
 	border:none;
 	background: none;
+	padding: 20px;
 }
+
+.content {
+	max-width: 1000px;
+	columns: 2 50px;
+	column-gap: 100px;
+	hyphens: auto;
+	margin: auto;
+	margin-top: 60px;
+	text-align: justify;
+	line-height: 25px;
+}
+
+
+/* SECTION 2 = COMMENTAIRES */
+
+#wrapper-comment {
+	max-width: 1400px;
+	margin: auto;
+}
+
+h2 {
+	margin: auto;
+	font-family: 'Cormorant Garamond', sans-serif;
+	font-size: 70px;
+	font-weight: normal;
+}
+
+.container-comment {
+	max-width: 500px;
+	margin-top: 100px;
+	padding:30px;
+	margin-bottom: 200px;
+}
+
+.form {
+	max-width: 500px;
+	margin-top: 40px;
+	
+}
+
+label {
+	font-family: 'Roboto', sans-serif;
+	margin-right: 20px;
+}
+
+input {
+	margin-bottom: 30px;
+}
+
+input, textarea {
+	text-decoration: none;
+	border:none;
+	border-bottom:1px solid #D3D3D3;
+}
+
+
+input:focus, textarea:focus {
+	outline: none;
+}
+
+textarea {
+	resize: none;
+	overflow: hidden;
+}
+
+::-webkit-input-placeholder {
+	font-family: 'Roboto', sans-serif;
+	font-size:16px;
+	color: black;
+}
+
+.button {
+	background: black;
+	color: white;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	width: 200px;
+	height: 50px;
+	border:none;
+	letter-spacing: 1.5px;
+	margin-top: 50px;
+}
+
+
