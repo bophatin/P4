@@ -18,16 +18,6 @@ class Comment() {
 
 
 	public function hydrate(array $donnees) {
-		if (isset($donnees['name'])) {
-			$this->setNameAdmin($donnees['name']);
-		}
-		if (isset($donnees['date_comment'])) {
-			$this->setPassword($donnees['date_comment']);
-		} 
-		if (isset($donnees['content_comment'])) {
-			$this->setContentComment($donnees['content_comment']);
-		}
-
 		foreach ($donnees as $key => $value) {
 			$method = 'set' .ucfirst($key);
 			if method_exists($this, $method) {

@@ -38,8 +38,8 @@
 			<div class="form">
 				<form method="post">
 					<p><label for="nom">Nom</label></p>
-					<p><input type="text" name="nom"></p>
-					<textarea name="textarea" placeholder="Commentaire" rows="5" cols="40"></textarea>
+					<p><input type="text" name="name-form"></p>
+					<textarea name="comment-form" placeholder="Commentaire" rows="5" cols="40"></textarea>
 					<br/>
 					<input type="submit" value="send message" class="button">
 				</form>

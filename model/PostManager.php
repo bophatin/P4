@@ -20,7 +20,7 @@ class PostManager {
 
 	// READ
 	public function get($id) {
-		$q = Database::getPDO()->prepare('SELECT * FROM post WHERE id = ?');
+		$q = Database::getPDO()->prepare('SELECT * FROM post WHERE id =' .$id);
 
 		$q->execute(array($id));
 		$donnees = $q->fetch(PDO::FETCH_ASSOC);
