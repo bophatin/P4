@@ -17,17 +17,10 @@ class User {
 
 
 	public function hydrate(array $donnees) {
-		if (isset($donnees['name_admin'])) {
-			$this->setNameAdmin($donnees['name_admin']);
-		}
-		if (isset($donnees['password'])) {
-			$this->setPassword($donnees['password']);
-		}
-
 		foreach ($donnees as $key => $value) {
 			$method = 'set' .ucfirst($key);
-			if method_exists($this, $method) {
-				$this->method($value);
+			if (method_exists($this, $method) {
+				$this->$method($value);
 			}
 		}
 	}
