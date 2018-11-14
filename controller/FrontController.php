@@ -20,12 +20,13 @@ class FrontController {
 
 
 	public static function addComment() {
-		$name_form = htmlspecialchars($_POST['name-form']);
-		$comment_form = htmlspecialchars($_POST['comment-form']);
-		
+		$commPost = new Comment([
+			'name' => htmlspecialchars($_POST['name-form']),
+			'content_comment' => htmlspecialchars($_POST['comment-form'])
+		]);
+
 		$add = new CommentManager();
-		$addComment = $add->add($name_form, $comment_form);
-		require 'view/postView.php';
+		$addComment = $add->add($commPost);
 	}
 
 
