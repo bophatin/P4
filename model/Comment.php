@@ -1,6 +1,6 @@
 <?php
 
-class Comment() {
+class Comment {
 
 	private $_id;
 	private $_name;
@@ -18,10 +18,15 @@ class Comment() {
 
 
 	public function hydrate(array $donnees) {
+
+		if (isset($donnees['content_comment'])) {
+		    $this->setContentComment($donnees['content_comment']);
+		}
+
 		foreach ($donnees as $key => $value) {
 			$method = 'set' .ucfirst($key);
-			if method_exists($this, $method) {
-				$this->method($value);
+			if (method_exists($this, $method)) {
+				$this->$method($value);
 			}
 		}
 	}
@@ -37,7 +42,7 @@ class Comment() {
 	}
 
 	public function dateComment() {
-		return $this->_email;
+		return $this->_date_comment;
 	}
 
 	public function contentComment() {

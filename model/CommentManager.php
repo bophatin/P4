@@ -5,10 +5,15 @@ require_once 'Database.php';
 class CommentManager {
 
 	// CREATE
-	public function add($name_form, $comment_form) {
-		$c = Database::getPDO()->prepare('INSERT INTO comment(name, date_comment, content_comment) VALUES(?, NOW(), ?)');
-		$c->execute(array($name_form, $comment_form));
+	public function add(Comment $comm) {
+		$c = Database::getPDO()->prepare('INSERT INTO comment(name, date_comment, content_comment) VALUES (:name, NOW(), :content_comment)');
+
+		$c->bindValue(':name', $comm->name(), PDO::PARAM_STR);
+		$c->bindValue(':content_comment', $comm->contentComment());
+
+		$c->execute();
 	}
+	
 
 	// READ
 	public function get($id) {
@@ -29,7 +34,7 @@ class CommentManager {
 		$c->bindValue(':date_comment', $comm->dateComment());
 		$c->bindValue(':content_comment', $comm->contentComment());
 
-		$q->execute();
+		$c->execute();
 	}
 
 	// DELETE
@@ -46,5 +51,6 @@ class CommentManager {
 		}
 		return $comm;
 	}
+
 
 }
