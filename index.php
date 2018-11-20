@@ -14,6 +14,7 @@ if (isset($_GET['p'])) {
 }
 
 
+// FRONT
 
 if ($p === 'indexView') {
 	require 'view/indexView.php';
@@ -22,8 +23,6 @@ if ($p === 'indexView') {
 if ($p === 'allPostsView') {
 	FrontController::getPosts();
 }
-
-
 
 
 if ($p === 'postView') {
@@ -42,6 +41,5 @@ if ($p === 'postView') {
 		}
 	}
 }
-
 
 

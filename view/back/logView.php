@@ -14,7 +14,7 @@
 
 <body>
 	<header>
-		<h1>Back office</h1>
+		<h1>Back Office</h1>
 	</header>
 
 	<section id="form">
