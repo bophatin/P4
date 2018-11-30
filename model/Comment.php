@@ -19,6 +19,9 @@ class Comment {
 
 	public function hydrate(array $donnees) {
 
+		if (isset($donnees['name'])) {
+		    $this->setContentComment($donnees['name']);
+		}
 		if (isset($donnees['content_comment'])) {
 		    $this->setContentComment($donnees['content_comment']);
 		}

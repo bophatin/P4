@@ -37,11 +37,11 @@
 			<h2>Any reactions ?</h2>
 			<div class="form">
 				<form method="post">
-					<p><label for="nom">Nom</label></p>
+					<p><label for="name-form">Nom</label></p>
 					<p><input type="text" name="name-form"></p>
 					<textarea name="comment-form" placeholder="Commentaire" rows="5" cols="40"></textarea>
 					<br/>
-					<input type="submit" value="send message" class="button">
+					<input type="submit" name="send-comment" value="send message" class="button">
 				</form>
 			</div>
 		</div>

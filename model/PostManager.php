@@ -7,11 +7,10 @@ class PostManager {
 
 	// CREATE
 	public function add(Post $chap) {
-		$q = Database::getPDO()->prepare('INSERT INTO post(title, date_post, content_post) VALUES(:title, :date_post, :content_post)'); 
+		$q = Database::getPDO()->prepare('INSERT INTO post(title, date_post, content_post) VALUES(:title, NOW(), :content_post)'); 
 
 		// Assignation des valeurs pour l'id, le titre, la date, le contenu
 		$q->bindValue(':title', $chap->title());
-		$q->bindValue(':date_post', $chap->datePost());
 		$q->bindValue(':content_post', $chap->contentPost());
 		// Exécution de la requête
 		$q->execute();
@@ -46,7 +45,13 @@ class PostManager {
 
 	// DELETE
 	public function delete(Post $chap) {
-		$q = Database::getPDO()->exec('DELETE FROM post WHERE id = '.$chap->id());
+		$q = Database::getPDO()->prepare('DELETE FROM post WHERE id =' .$chap->id());
+
+		$q->bindValue(':id', $chap->id());
+		$q->bindValue(':title', $chap->title());
+		$q->bindValue(':content_post', $chap->contentPost());
+
+		$q->execute();
 	}
 
 

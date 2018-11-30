@@ -29,48 +29,54 @@
 					<input type="text" name="pseudo-add" id="nom"/>
 					<label for="password">PASSWORD</label>
 					<input type="password" name="mdp-add" id="mdp"/>
-					<input type="submit" name="envoyer" value="CREATE" class ="button"/>
+					<input type="submit" name="create" value="CREATE" class ="button"/>
 				</form> 
 			</div>
 		</div>
 
-
 		<div class="container-modify">
-			<p class="title">Modify a user</p>
+			<p class="title">Users list</p>
+			<div class="background-form">
+				<table>
+				<?php foreach($usersList as $userList): ?>
+				<tr>
+					<td><label for="id"><?= $userList->nameAdmin(); ?></label></td>
+					<td>
+						<a href="admin.php?p=usersView&name_admin=<?=$userList->nameAdmin();?>">
+						<input type="submit" name="update" value="update" class="button-tab">
+					</td>
+					<td>
+						<a href="admin.php?p=usersView&id=<?=$userList->id();?>">
+						<input type="submit" name="delete" value="delete" class="button-tab"/>
+						</a>
+					</td>
+				</tr>
+				<?php endforeach ?>
+				</table>
+			</div>
+		</div>
+
+		<div class="container-delete">
+			<p class="title">Update a user</p>
 			<div class="background-form">
 				<form method="post" action="" class="form">
 					<label for="pseudo">PSEUDO</label>
-					<input type="text" name="pseudo" id="nom"/>
+					<input type="text" name="pseudo" value="<?= $getUser['name_admin'] ?>" id="nom"/>
 					<label for="password">PASSWORD</label>
-					<input type="password" name="mdp" id="mdp"/>
-					<input type="submit" name="envoyer" value="MODIFY" class ="button"/>
+					<input type="text" name="mdp" value="<?= $getUser['password'] ?>" id="mdp"/>
+					<input type="submit" name="save" value="SAVE" class ="button"/>
 				</form> 
 			</div>
 		</div>
 
-
-		<div class="container-delete">
-			<p class="title">Delete a user</p>
-			<div class="background-form">
-				<p class="titre-delete">Pseudo</p>
-
-				<form method="post" action="" class="form-delete">
-					<?php foreach($usersList as $userList): ?>
-					<input type="checkbox" name="id" value="<?php echo $id; ?>"/>
-					<label for="users"><?= $userList->nameAdmin(); ?></label>
-					<?php endforeach ?>
-					<input type="submit" name="envoyer" value="DELETE" class ="button"/>
-				</form> 
-
-			</div>
-		</div>
 
 	</section>
+
 </body>
 
 
 
-<footer> </footer>
+<footer></footer>
 
 
 </html>

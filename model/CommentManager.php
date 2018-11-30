@@ -30,7 +30,6 @@ class CommentManager {
 		$c = Database::getPDO()->prepare('UPDATE comment SET name = :name, email = :email, date_comment = :date_comment, content_comment = :content_comment WHERE id = :id');
 
 		$c->bindValue(':name', $comm->name(), PDO::PARAM_STRING);
-		$c->bindValue(':email', $comm->email());
 		$c->bindValue(':date_comment', $comm->dateComment());
 		$c->bindValue(':content_comment', $comm->contentComment());
 
@@ -39,17 +38,23 @@ class CommentManager {
 
 	// DELETE
 	public function delete(Comment $comm) {
-		$c = Database::getPDO()->exec('DELETE FROM comment WHERE id = '.$comm->id());
+		$c = Database::getPDO()->prepare('DELETE FROM comment WHERE id =' .$comm->id());
+
+		$c->bindValue(':id', $comm->id());
+		$c->bindValue(':name', $comm->name());
+		$c->bindValue(':content_comment', $comm->contentComment());
+
+		$c->execute();
 	}
 
 	public function getComments() {
-		$comm = [];
-		$c = Database::getPDO()->query('SELECT id, name, email, date_comment, content_comment, FROM comment');
+		$chaps = [];
+		$q = Database::getPDO()->query('SELECT * FROM comment ORDER BY id DESC');
 
-		while ($dataComm = $c->fetch(PDO::FECTH_ASSOC)) {
-			$comm[] = new Post($dataComm);
+		while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
+			$chaps[] = new Comment($donnees);
 		}
-		return $comm;
+		return $chaps;
 	}
 
 
