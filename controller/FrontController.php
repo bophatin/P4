@@ -13,10 +13,15 @@ class FrontController {
 			$id = htmlspecialchars(($_GET['id']));
 			$article = new PostManager();
 			$datas = $article->get($id);
+
+			$commManager = new CommentManager();
+			$comments = $commManager->getComments();
+
 			require 'view/postView.php';
 		} else {
 			die('Erreur'); // Mettre page 404
 		}
+
 	}
 
 	public static function addComment() {
@@ -37,5 +42,6 @@ class FrontController {
 			}
 		} 
 	}
+
 
 } 
