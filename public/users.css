@@ -169,6 +169,70 @@ input[type=checkbox] {
 
 
 
+/* FORM ADD */
+
+.wrapper {
+	max-width: 1340px;
+	height: auto;
+	margin: auto;
+	margin-top: 150px;
+	display: flex;
+}
+
+
+.container-form {
+	width: 1100px;
+}
+
+h2 {
+	font-family: 'Cormorant Garamond', sans-serif;
+	font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 40px;
+    margin:0;
+}
+
+
+label {
+	font-family: 'Roboto', sans-serif;
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+input, textarea {
+	padding: 10px;
+	margin-bottom: 35px;
+	width: 600px;
+	border:1px solid #D3D3D3;
+}
+
+textarea {
+	width: 1078px;
+}
+
+input:focus, textarea:focus {
+	outline: none;
+}
+
+input[type ="submit"].button-add {
+	font-family: 'Roboto', sans-serif;
+	background:#6e8153;
+	width:130px;
+	height:45px;
+	color: white;
+	border: none;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+input[type ="submit"].button-add:hover {
+	background: black;
+	color: white;
+}
+
 
 
 

@@ -20,11 +20,11 @@
 	<section id="form">
 		<div class="background-form">
 			<form method="post" action="">
-			    <label for="pseudo">PSEUDO</label>
-			    <input type="text" name="pseudo" id="nom"/>
-			    <label for="password">MOT DE PASSE</label>
-			    <input type="password" name="mdp" id="mdp"/>
-			    <input type="submit" name="envoyer" value="VALIDER" class ="button"/>
+			    <label for="pseudo-log">PSEUDO</label>
+			    <input type="text" name="pseudo-log" id="nom"/>
+			    <label for="mdp-log">MOT DE PASSE</label>
+			    <input type="password" name="mdp-log" id="mdp"/>
+			    <input type="submit" name="send-log" value="CONNEXION" class ="button"/>
 			</form> 
 		</div>
 	</section>

@@ -42,33 +42,18 @@
 				<tr>
 					<td><label for="id"><?= $userList->nameAdmin(); ?></label></td>
 					<td>
-						<a href="admin.php?p=usersView&name_admin=<?=$userList->nameAdmin();?>">
-						<input type="submit" name="update" value="update" class="button-tab">
+						<a href="admin.php?p=updateUserView&id=<?=$userList->id();?>"><input type="submit" name="update" value="update" class="button-tab"></a>
 					</td>
 					<td>
-						<a href="admin.php?p=usersView&id=<?=$userList->id();?>">
-						<input type="submit" name="delete" value="delete" class="button-tab"/>
-						</a>
+						<form method="post" action="supprimer.php?id=<?=$userList->id();?>" >
+							<input type="submit" name="delete-user" value="delete" class="button-tab"/>
+						</form>
 					</td>
 				</tr>
 				<?php endforeach ?>
 				</table>
 			</div>
 		</div>
-
-		<div class="container-delete">
-			<p class="title">Update a user</p>
-			<div class="background-form">
-				<form method="post" action="" class="form">
-					<label for="pseudo">PSEUDO</label>
-					<input type="text" name="pseudo" value="<?= $getUser['name_admin'] ?>" id="nom"/>
-					<label for="password">PASSWORD</label>
-					<input type="text" name="mdp" value="<?= $getUser['password'] ?>" id="mdp"/>
-					<input type="submit" name="save" value="SAVE" class ="button"/>
-				</form> 
-			</div>
-		</div>
-
 
 	</section>
 

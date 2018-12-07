@@ -42,8 +42,10 @@
 					<td><label for="id"><?= $post->id(); ?></td>
 					<td><?= $post->title(); ?></td>
 					<td><?= $post->datePost(); ?></td>
-					<td><input type="submit" value="update" class="butt-link"></td>
-					<td><a href="admin.php?p=postEditView&id=<?=$post->id();?>"><input type="submit" value="delete" class="butt-link"></a></td>
+					<td>
+						<a href="admin.php?p=updatePostView&id=<?=$post->id();?>"><input type="submit" name="update-post" value="update" class="butt-link"></a>
+					</td>
+					<td><form method="post" action="supprimer.php?id=<?=$post->id();?>"><input type="submit" name="delete-post" value="delete" class="butt-link"/></form></td>
 				</tr>
 				<?php endforeach ?>
 			</table>
@@ -59,7 +61,7 @@
 					<td><label for="id"><?= $comment->id(); ?></label></td>
 					<td><?= $comment->name(); ?></td>
 					<td><?= $comment->contentComment(); ?></td> 
-					<td><a href="admin.php?p=postEditView&id=<?=$comment->id();?>"><input type="submit" value="delete" class="butt-link"></a></td>
+					<td><form method="post" action="supprimer.php?id=<?=$comment->id();?>" ><input type="submit" name="delete-comment" value="delete" class="butt-link"/></form></td>
 				</tr>
 				<?php endforeach ?>
 			</table>

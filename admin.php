@@ -18,12 +18,20 @@ if (isset($_GET['p'])) {
 if ($p === 'logView') {
 	require 'view/back/logView.php';
 
-	if(isset($_POST['envoyer'])) {
+	if(isset($_POST['send-log'])) {
+		if (isset($_POST['pseudo-log'], $_POST['mdp-log'])) {
+			if(!empty($_POST['pseudo-log']) && !empty($_POST['mdp-log'])) {
 
-		if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])) {
-			AdminController::login();
+				/*$pseudolog = htmlspecialchars($_POST['pseudo-log']);
+				$mdplog = htmlspecialchars($_POST['mdp-log']);*/
+
+				AdminController::login();
+				header('Location:admin.php?p=postEditView');
+			} else {
+				echo 'Vous devez remplir tous les champs afin de pouvoir vous connecter';
+			}
 		} else {
-			echo "Vous devez remplir tous les champs afin de pouvoir vous connecter";
+			echo "Erreur";
 		}
 	}
 }
@@ -45,24 +53,39 @@ if ($p === 'usersView') {
 	} 
 
 	AdminController::getListUsers();
+}
 
+
+// PAGE UPDATE USER
+
+if ($p === 'updateUserView') {
 
 	if (isset($_GET['id'])) {
-		AdminController::deleteUser(); 
-	}
-
-	if(isset($_POST['update'])) {
-		if (isset($_GET['name_admin'])) {
-			AdminController::getUserId();
-		} else {
-			die('Erreur'); 
-		}
+		AdminController::getUserId();
 	}
 
 	if(isset($_POST['save'])) {
-		if (isset($_POST['pseudo'], $_POST['mdp'])) {
+		if (isset($_POST['pseudo-new'], $_POST['mdp-new'])) {
 			AdminController::updateUser();
 			header('Location: admin.php?p=usersView'); 
+		} 
+	}
+}
+
+
+
+// PAGE UPDATE POST
+
+if ($p === 'updatePostView') {
+
+	if (isset($_GET['id'])) {
+		AdminController::getPostId();
+	}
+
+	if(isset($_POST['save-post'])) {
+		if (isset($_POST['title-new'], $_POST['content-new'])) {
+			AdminController::updatePost();
+			header('Location: admin.php?p=postEditView'); 
 		} 
 	}
 }
@@ -84,21 +107,4 @@ if ($p === 'postEditView') {
 	} 
 
 	AdminController::getLists();
-
-	if (isset($_GET['id'])) {
-		AdminController::deleteComment(); 
-	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

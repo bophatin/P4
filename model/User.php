@@ -17,9 +17,9 @@ class User {
 
 
 	public function hydrate(array $donnees) {
-		if (isset($donnees['id'])) {
+		/*if (isset($donnees['id'])) {
 		    $this->setId($donnees['id']);
-		}
+		}*/
 		if (isset($donnees['name_admin'])) {
 		    $this->setNameAdmin($donnees['name_admin']);
 		}

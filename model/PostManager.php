@@ -30,13 +30,12 @@ class PostManager {
 
 	// UPDATE
 	public function update(Post $chap) {
-		$q = Database::getPDO()->prepare('UPDATE post SET title = :title, date_post = :date_post, content_post = :content_post WHERE id = :id');
+		$q = Database::getPDO()->prepare('UPDATE post SET title = :title, content_post = :content_post WHERE id = :id');
 
 		// Assignation des valeurs à la requête
 		$q->bindValue(':title', $chap->title());
-		$q->bindValue(':date_post', $chap->datePost());
 		$q->bindValue(':content_post', $chap->contentPost());
-		$q->bindValue(':id', $chap->id(), PDO::PARAM_INT);
+		$q->bindValue(':id', $chap->id());
 
 		// Exécution de la requête
 		$q->execute();

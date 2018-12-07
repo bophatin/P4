@@ -5,6 +5,7 @@ class AdminController {
 	public static function login() {
 		$new_user = new UserManager();
 		$users = $new_user->getUsers();
+		var_dump($users);
 	}
 
 
@@ -24,12 +25,11 @@ class AdminController {
 		$newListManager = new UserManager();
 		$usersList = $newListManager->getUsers();
 		require 'view/back/usersView.php';
-		
 	}
 
 	public static function deleteUser() {
 		$newUser2 = new User([
-			'id' => htmlspecialchars($_GET['id']),
+			'id' => htmlspecialchars($_GET['id'])
 		]);
 
 		$newUserManager = new UserManager();
@@ -37,21 +37,23 @@ class AdminController {
 	}
 
 	public static function getUserId() {
-		$id = htmlspecialchars(($_GET['name_admin']));
+		$id = htmlspecialchars(($_GET['id']));
 
 		$getUserManager = new UserManager();
 		$getUser = $getUserManager->get($id);
-		require 'view/postView.php';
+		require 'view/back/updateUserView.php';
 	}
 
 	public static function updateUser() {
 		$newUpUser = new User([
-			'name_admin' => htmlspecialchars($_POST['pseudo-add']),
-			'password' => password_hash(htmlspecialchars($_POST['mdp-add']), PASSWORD_DEFAULT)
+			'name_admin' => htmlspecialchars($_POST['pseudo-new']),
+			'password' => password_hash(htmlspecialchars($_POST['mdp-new']), PASSWORD_DEFAULT),
+			'id' => htmlspecialchars($_GET['id'])
 		]);
 
 		$newUpUserManager = new UserManager();
 		$UpdateUser = $newUpUserManager->update($newUpUser);
+		
 	}
 
 
@@ -67,6 +69,14 @@ class AdminController {
 		require 'view/back/postEditView.php';
 	}
 
+	public static function getPostId() {
+		$id = htmlspecialchars(($_GET['id']));
+
+		$getPostManager = new PostManager();
+		$getPost = $getPostManager->get($id);
+		require 'view/back/updatePostView.php';
+	}
+
 	public static function addPost() {
 		$newPost = new Post([
 			'title' => htmlspecialchars($_POST['title']),
@@ -75,6 +85,17 @@ class AdminController {
 
 		$newPostManager = new PostManager();
 		$addNewPost = $newPostManager->add($newPost);
+	}
+
+	public static function updatePost() {
+		$newUpPost = new Post([
+			'title' => htmlspecialchars($_POST['title-new']),
+			'content_post' => htmlspecialchars($_POST['content-new']),
+			'id' => htmlspecialchars($_GET['id'])
+		]);
+
+		$newUpManager = new PostManager();
+		$updateNewPost = $newUpManager->update($newUpPost);
 	}
 
 	public static function deletePost() {

@@ -37,10 +37,11 @@ class UserManager {
 
 
 	public function update(User $users) {
-		$u = Database::getPDO()->prepare('UPDATE user SET name_admin = :name_admin, password = :password WHERE id = :id LIMIT 1');
+		$u = Database::getPDO()->prepare('UPDATE user SET name_admin = :name_admin, password = :password WHERE id = :id');
 
 		$u->bindValue(':name_admin', $users->nameAdmin());
-		$u->bindValue('password', $users->password());
+		$u->bindValue(':password', $users->password());
+		$u->bindValue(':id', $users->id());
 
 		$u->execute();
 	}
@@ -56,4 +57,17 @@ class UserManager {
 		$u->execute();
 	}
 
+	public function logUser(User $users) {
+
+		$u = Database::getPDO()->prepare('SELECT name_admin, password FROM user WHERE name_admin = :name_admin AND password = :password');
+
+		$u->bindValue(':name_admin', $users->nameAdmin());
+		$u->bindValue(':password', $users->password());
+
+		$u->execute();
+
+
+	}
+
 }
+
