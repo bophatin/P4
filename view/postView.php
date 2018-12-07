@@ -47,6 +47,21 @@
 		</div>
 	</section>
 
+	<section class="wrapper">
+		<div class="container-h2"><h2>Comments<br/>list</h2></div>
+		<div class="container-form">
+			<table>
+				<?php foreach($comments as $comment): ?>
+				<tr>
+					<td><?= $comment->name(); ?></td>
+					<td><?= $comment->contentComment(); ?></td> 
+					<td><form method="post" action="" ><input type="submit" name="signaler-comment" value="signaler" class="butt-link"/></form></td>
+				</tr>
+				<?php endforeach ?>
+			</table>
+		</div>
+	</section>
+
 </body>
 
 
