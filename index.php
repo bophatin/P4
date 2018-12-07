@@ -1,9 +1,8 @@
 <?php
 
 require 'model/Autoloader.php';
-Autoloader::register();
-
 require 'controller/FrontController.php';
+Autoloader::register();
 
 
 if (isset($_GET['p'])) {
@@ -13,41 +12,19 @@ if (isset($_GET['p'])) {
 }
 
 
-// HOME PAGE
+$p === isset($_GET['p']);
 
-if ($p === 'indexView') {
+switch($p) {
+	case 'indexView':
 	require 'view/indexView.php';
-}
+	break;
 
-
-// PAGE TOUS LES ARTICLES
-
-if ($p === 'allPostsView') {
+	case 'allPostsView':
 	FrontController::getPosts();
+	break;
+
+	case 'postView':
+	FrontController::addComment();
+	FrontController::getArt();
+	break;
 }
-
-
-// PAGE ARTICLE
-
-if ($p === 'postView') {
-
-	if(isset($_POST['send-comment'])) {
-		if (isset($_POST['name-form'], $_POST['comment-form'])) {
-			if (!empty($_POST['name-form']) AND !empty($_POST['comment-form'])) {
-				FrontController::addComment();
-				header('Location: index.php?p=allPostsView'); 
-			} else {
-				echo "Veuillez remplir tous les champs";
-			}
-		}
-	} 
-
-	if (isset($_GET['id']) AND !empty($_GET['id'])) {
-		FrontController::getArt();
-	} else {
-		die('Erreur'); // Mettre page 404
-	}
-
-}
-
-
