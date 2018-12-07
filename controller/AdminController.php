@@ -3,28 +3,76 @@
 class AdminController {
 
 	public static function login() {
-		$new_user = new UserManager();
-		$users = $new_user->getUsers();
-		var_dump($users);
+		if(isset($_POST['send-log'])) {
+			if (isset($_POST['pseudo-log'], $_POST['mdp-log'])) {
+				if(!empty($_POST['pseudo-log']) && !empty($_POST['mdp-log'])) {
+					$new_user = new UserManager();
+					$users = $new_user->getUsers();
+					var_dump($users);
+
+					header('Location:admin.php?p=postEditView');
+				} else {
+				echo 'Vous devez remplir tous les champs afin de pouvoir vous connecter';
+				}
+			} else {
+				echo "Erreur";
+			}
+		}
 	}
 
 
 	// USERS
 
 	public static function addUser() {
-		$newUser = new User([
-			'name_admin' => htmlspecialchars($_POST['pseudo-add']),
-			'password' => password_hash(htmlspecialchars($_POST['mdp-add']), PASSWORD_DEFAULT)
-		]);
+		if(isset($_POST['create'])) {
+			if (isset($_POST['pseudo-add'], $_POST['mdp-add'])) {
+				if (!empty($_POST['pseudo-add']) AND !empty($_POST['mdp-add'])) {
+					$newUser = new User([
+						'name_admin' => htmlspecialchars($_POST['pseudo-add']),
+						'password' => password_hash(htmlspecialchars($_POST['mdp-add']), PASSWORD_DEFAULT)
+					]);
 
-		$addUserManager = new UserManager();
-		$addUser = $addUserManager->add($newUser);
+					$addUserManager = new UserManager();
+					$addUser = $addUserManager->add($newUser);
+					header('Location: admin.php?p=usersView'); 
+				} else {
+					echo "Veuillez remplir tous les champs";
+				}
+			}
+		} 
 	}
 
 	public static function getListUsers() {
 		$newListManager = new UserManager();
 		$usersList = $newListManager->getUsers();
 		require 'view/back/usersView.php';
+	}
+
+
+	public static function getUserId() {
+		if (isset($_GET['id'])) {
+			$id = htmlspecialchars(($_GET['id']));
+
+			$getUserManager = new UserManager();
+			$getUser = $getUserManager->get($id);
+			require 'view/back/updateUserView.php';
+		}
+	}
+
+	public static function updateUser() {
+		if(isset($_POST['save'])) {
+			if (isset($_POST['pseudo-new'], $_POST['mdp-new'])) {
+				$newUpUser = new User([
+					'name_admin' => htmlspecialchars($_POST['pseudo-new']),
+					'password' => password_hash(htmlspecialchars($_POST['mdp-new']), PASSWORD_DEFAULT),
+					'id' => htmlspecialchars($_GET['id'])
+				]);
+
+				$newUpUserManager = new UserManager();
+				$UpdateUser = $newUpUserManager->update($newUpUser);
+				header('Location: admin.php?p=usersView'); 
+			} 
+		}
 	}
 
 	public static function deleteUser() {
@@ -34,26 +82,6 @@ class AdminController {
 
 		$newUserManager = new UserManager();
 		$delUser = $newUserManager->delete($newUser2);
-	}
-
-	public static function getUserId() {
-		$id = htmlspecialchars(($_GET['id']));
-
-		$getUserManager = new UserManager();
-		$getUser = $getUserManager->get($id);
-		require 'view/back/updateUserView.php';
-	}
-
-	public static function updateUser() {
-		$newUpUser = new User([
-			'name_admin' => htmlspecialchars($_POST['pseudo-new']),
-			'password' => password_hash(htmlspecialchars($_POST['mdp-new']), PASSWORD_DEFAULT),
-			'id' => htmlspecialchars($_GET['id'])
-		]);
-
-		$newUpUserManager = new UserManager();
-		$UpdateUser = $newUpUserManager->update($newUpUser);
-		
 	}
 
 
@@ -70,32 +98,48 @@ class AdminController {
 	}
 
 	public static function getPostId() {
-		$id = htmlspecialchars(($_GET['id']));
+		if (isset($_GET['id'])) {
+			$id = htmlspecialchars(($_GET['id']));
 
-		$getPostManager = new PostManager();
-		$getPost = $getPostManager->get($id);
-		require 'view/back/updatePostView.php';
+			$getPostManager = new PostManager();
+			$getPost = $getPostManager->get($id);
+			require 'view/back/updatePostView.php';
+		}
 	}
 
 	public static function addPost() {
-		$newPost = new Post([
-			'title' => htmlspecialchars($_POST['title']),
-			'content_post' => htmlspecialchars($_POST['content'])
-		]);
+		if(isset($_POST['addPost'])) {
+			if (isset($_POST['title'], $_POST['content'])) {
+				if (!empty($_POST['title']) AND !empty($_POST['content'])) {
+					$newPost = new Post([
+						'title' => htmlspecialchars($_POST['title']),
+						'content_post' => htmlspecialchars($_POST['content'])
+					]);
 
-		$newPostManager = new PostManager();
-		$addNewPost = $newPostManager->add($newPost);
+					$newPostManager = new PostManager();
+					$addNewPost = $newPostManager->add($newPost);
+					header('Location: admin.php?p=postEditView'); 
+				} else {
+					echo "Veuillez remplir tous les champs";
+				}
+			}
+		}
 	}
 
 	public static function updatePost() {
-		$newUpPost = new Post([
-			'title' => htmlspecialchars($_POST['title-new']),
-			'content_post' => htmlspecialchars($_POST['content-new']),
-			'id' => htmlspecialchars($_GET['id'])
-		]);
+		if(isset($_POST['save-post'])) {
+			if (isset($_POST['title-new'], $_POST['content-new'])) {
+				$newUpPost = new Post([
+					'title' => htmlspecialchars($_POST['title-new']),
+					'content_post' => htmlspecialchars($_POST['content-new']),
+					'id' => htmlspecialchars($_GET['id'])
+				]);
 
-		$newUpManager = new PostManager();
-		$updateNewPost = $newUpManager->update($newUpPost);
+				$newUpManager = new PostManager();
+				$updateNewPost = $newUpManager->update($newUpPost);
+				header('Location: admin.php?p=postEditView'); 
+			} 
+		}
 	}
 
 	public static function deletePost() {
@@ -106,6 +150,10 @@ class AdminController {
 		$newPostManager2 = new PostManager();
 		$delPost = $newPostManager2->delete($newPost2);
 	}
+
+
+
+	// EDIT COMMENTS
 
 	public static function deleteComment() {
 		$newComment = new Comment([

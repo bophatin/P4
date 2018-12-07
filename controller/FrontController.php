@@ -2,13 +2,11 @@
 
 class FrontController {
 
-
 	public static function getPosts() {
 		$list = new PostManager();
 		$posts = $list->getPost();
 		require 'view/allPostsView.php';
 	}
-
 
 	public static function getArt() {
 		if (isset($_GET['id']) AND !empty($_GET['id'])) {
@@ -39,6 +37,5 @@ class FrontController {
 			}
 		} 
 	}
-
 
 } 
