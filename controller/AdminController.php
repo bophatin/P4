@@ -3,16 +3,31 @@
 class AdminController {
 
 	public static function login() {
+
 		if(isset($_POST['send-log'])) {
 			if (isset($_POST['pseudo-log'], $_POST['mdp-log'])) {
-				if(!empty($_POST['pseudo-log']) && !empty($_POST['mdp-log'])) {
-					$new_user = new UserManager();
-					$users = $new_user->getUsers();
-					var_dump($users);
+				if(!empty($_POST['pseudo-log']) AND !empty($_POST['mdp-log'])) {
+					$name = htmlspecialchars($_POST['pseudo-log']);
+					$pwd = htmlspecialchars($_POST['mdp-log']);
+			
+					$us = new User([
+						'name_admin' => $name,
+						'password' => $pwd
+					]);
+				
+					$um = new UserManager();
+					$user = $um->logUser($name);
+					
+					$mdp = $user->password();
+					$validPwd = password_verify($pwd, $mdp);
 
-					header('Location:admin.php?p=postEditView');
+					if($validPwd) {
+						header('Location:admin.php?p=postEditView');
+					} else {
+						echo "Identifiants incorrects";
+					}
 				} else {
-				echo 'Vous devez remplir tous les champs afin de pouvoir vous connecter';
+					echo 'Vous devez remplir tous les champs afin de pouvoir vous connecter';
 				}
 			} else {
 				echo "Erreur";
