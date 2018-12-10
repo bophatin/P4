@@ -57,16 +57,14 @@ class UserManager {
 		$u->execute();
 	}
 
-	public function logUser(User $users) {
+	public function logUser($nameAdmin) {
+		$u = Database::getPDO()->prepare('SELECT * FROM user WHERE name_admin = :name_admin');
+		$u->execute(array(
+			':name_admin' => $nameAdmin
+		));
+		$donnees = $u->fetch(PDO::FETCH_ASSOC);
 
-		$u = Database::getPDO()->prepare('SELECT name_admin, password FROM user WHERE name_admin = :name_admin AND password = :password');
-
-		$u->bindValue(':name_admin', $users->nameAdmin());
-		$u->bindValue(':password', $users->password());
-
-		$u->execute();
-
-
+		return new User($donnees);
 	}
 
 }

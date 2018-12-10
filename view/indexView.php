@@ -20,8 +20,8 @@
 		<nav>
 			<ul>
 				<li><a href="index.php?p=allPostsView">Articles</a></li>
-				<li>Biographie</li>
-				<li>Contact</li>
+				<li><a class="js-scrollTo" href="#wrapper-2">Biographie</li>
+				<li><a class="js-scrollTo" href="#wrapper-3">Contact</li>
 			</ul>
 		</nav>
 	</header>
@@ -40,7 +40,7 @@
 
 		<div class="container-2">
 			<div class="left-art">
-				<h2>Latest Posts</h2>
+				<h2>Who is Jeanjean ?</h2>
 				<p class="txt-post">Jusqu’au jour du Drame, il y avait deux familles Goldman. Les Goldman-de-Baltimore et les Goldman-de-Montclair. Les Goldman-de-Montclair, dont est issu Marcus Goldman, l’auteur de La Vérité sur l’Affaire Harry Quebert, sont une famille de la classe moyenne, habitant une petite maison à Montclair, dans le New Jersey. Les Goldman-de-Baltimore sont une famille prospère à qui tout sourit, vivant dans une luxueuse maison d’une banlieue riche de Baltimore, à qui Marcus vouait une admiration sans borne. <br/><br/>
 				Huit ans après le Drame, c’est l’histoire de sa famille que Marcus Goldman décide cette fois de raconter, lorsqu’en février 2012, il quitte l’hiver new-yorkais pour la chaleur tropicale de Boca Raton, en Floride, où il vient s’atteler à son prochain roman. <br/><br/>
 				Au gré des souvenirs de sa jeunesse, Marcus revient sur la vie et le destin des Goldman-de-Baltimore et la fascination qu’il éprouva jadis pour cette famille de l’Amérique huppée, entre les vacances à Miami, la maison de vacances dans les Hamptons et les frasques dans les écoles privées. Mais les années passent et le vernis des Baltimore s’effrite à mesure que le Drame se profile. Jusqu’au jour où tout bascule. <br/> <br/>
@@ -100,6 +100,10 @@
 		</div>
 	</section>
 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" href="public/js/anim.js"></script>
+	<script type='text/javascript' src='public/js/anim.js'></script>
 </body>
 
 
