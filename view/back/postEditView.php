@@ -15,10 +15,16 @@
 <body>
 	<header>
 		<h1>Post Edit</h1>
-		<p>Create or delete any posts, you got the keys.</p>
+		<nav>
+			<ul>
+				<li><a class="js-scrollTo" href="#wrapper-2">Posts List</li>
+				<li><a class="js-scrollTo" href="#wrapper-3">Comments List</li>
+				<li><a href="admin.php?p=usersView">Users</a></li>
+			</ul>
+		</nav>
 	</header>
 
-	<section class="wrapper">
+	<section id="wrapper">
 		<div class="container-h2"><h2>Add a post</h2></div>
 		<div class="container-form">
 
@@ -33,7 +39,7 @@
 		</div>
 	</section>
 
-	<section class="wrapper">
+	<section id="wrapper-2">
 		<div class="container-h2"><h2>Posts list</h2></div>
 		<div class="container-form">
 			<table>
@@ -52,7 +58,7 @@
 		</div>
 	</section>
 
-	<section class="wrapper">
+	<section id="wrapper-3">
 		<div class="container-h2"><h2>Comments<br/>list</h2></div>
 		<div class="container-form">
 			<table>
@@ -68,6 +74,10 @@
 		</div>
 	</section>
 
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" href="public/js/anim.js"></script>
+	<script type='text/javascript' src='public/js/anim.js'></script>
 </body>
 
 
