@@ -15,7 +15,13 @@
 <body>
 	<header>
 		<h1>Users</h1>
-		<p>Create or delete who you want, you are the master.</p>
+		<nav>
+			<ul>
+				<li><a href="admin.php?p=postEditView">Posts List</li>
+				<li><a href="admin.php?p=postEditView#wrapper-3">Comments List</li>
+				<li><a href="admin.php?p=usersView">Users</a></li>
+			</ul>
+		</nav>
 	</header>
 
 

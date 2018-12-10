@@ -21,18 +21,44 @@ h1 {
     text-align: center;
     margin:0;
     margin-top: 60px;
+    padding-bottom: 20px;
 }
 
-p {
+nav {
 	font-family: 'Roboto', sans-serif;
-	margin:0;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-size: 12px;
+	margin-top: -40px;
+	margin: auto;
 	text-align: center;
+}
+
+nav ul {
+	list-style-type: none;
+	display: inline-flex;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+a  { 
+	text-decoration: none; 
+	color: inherit;
+} 
+
+a:hover {
+	border-bottom : 1px solid black;
 }
 
 
 /* FORM ADD */
 
-.wrapper {
+#wrapper, #wrapper-2, #wrapper-3 {
 	max-width: 1340px;
 	height: auto;
 	margin: auto;
