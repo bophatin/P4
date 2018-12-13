@@ -24,6 +24,7 @@ switch($p) {
 	case 'usersView':
 	AdminController::addUser();
 	AdminController::getListUsers();
+	AdminController::deleteUser();
 	break;
 
 	case 'updateUserView':
@@ -34,6 +35,9 @@ switch($p) {
 	case 'postEditView':
 	AdminController::addPost();
 	AdminController::getLists();
+	/*AdminController::getSignaler();*/
+	AdminController::deleteEdit();
+	/*AdminController::deleteComment();*/
 	break;
 
 	case 'updatePostView':

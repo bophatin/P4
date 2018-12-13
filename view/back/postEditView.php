@@ -10,8 +10,6 @@
 	<title>Gestion Articles - BO Forteroche</title>
 </head>
 
-
-
 <body>
 	<header>
 		<h1>Post Edit</h1>
@@ -19,7 +17,7 @@
 			<ul>
 				<li><a class="js-scrollTo" href="#wrapper-2">Posts List</li>
 				<li><a class="js-scrollTo" href="#wrapper-3">Comments List</li>
-				<li><a href="admin.php?p=usersView">Users</a></li>
+				<li><a class="js-scrollTo" href="admin.php?p=usersView">Users</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -51,7 +49,7 @@
 					<td>
 						<a href="admin.php?p=updatePostView&id=<?=$post->id();?>"><input type="submit" name="update-post" value="update" class="butt-link"></a>
 					</td>
-					<td><form method="post" action="supprimer.php?id=<?=$post->id();?>"><input type="submit" name="delete-post" value="delete" class="butt-link"/></form></td>
+					<td><form method="post" action="admin.php?p=postEditView&id=<?=$post->id();?>"><input type="submit" name="delete-post" value="delete" class="butt-link"/></form></td>
 				</tr>
 				<?php endforeach ?>
 			</table>
@@ -66,15 +64,15 @@
 				<tr>
 					<td><label for="id"><?= $comment->id(); ?></label></td>
 					<td><?= $comment->name(); ?></td>
-					<td><?= $comment->contentComment(); ?></td> 
-					<td><form method="post" action="supprimer.php?id=<?=$comment->id();?>" ><input type="submit" name="delete-comment" value="delete" class="butt-link"/></form></td>
+					<td><?= $comment->contentComment(); ?></td>
+					<td><form method="post" action="admin.php?p=postEditView&id=<?=$comment->id();?>" ><input type="submit" name="delete-comment" value="delete" class="butt-link"/></form></td>
 				</tr>
 				<?php endforeach ?>
 			</table>
 		</div>
 	</section>
 
-
+		
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" href="public/js/anim.js"></script>
 	<script type='text/javascript' src='public/js/anim.js'></script>

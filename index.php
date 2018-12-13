@@ -24,7 +24,6 @@ switch($p) {
 	break;
 
 	case 'postView':
-	FrontController::addComment();
 	FrontController::getArt();
 	break;
 }

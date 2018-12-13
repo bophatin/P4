@@ -6,23 +6,25 @@ class CommentManager {
 
 	// CREATE
 	public function add(Comment $comm) {
-		$c = Database::getPDO()->prepare('INSERT INTO comment(name, date_comment, content_comment) VALUES (:name, NOW(), :content_comment)');
+		$c = Database::getPDO()->prepare('INSERT INTO comment(name, date_comment, content_comment, id_post) VALUES (:name, NOW(), :content_comment, :id_post)');
 
 		$c->bindValue(':name', $comm->name(), PDO::PARAM_STR);
 		$c->bindValue(':content_comment', $comm->contentComment());
+		$c->bindValue(':id_post', $comm->idPost());
 
 		$c->execute();
 	}
 	
 
 	// READ
-	public function get($id) {
-		$id = (int) $id;
+	public function get($idPost) {
+		$comms = [];
+		$c = Database::getPDO()->query('SELECT * FROM comment WHERE id_post =' .$idPost);
 
-		$c = Database::getPDO()->query('SELECT id, name, email, date_content, content_comment FROM post WHERE id = '.$id);
-		$dataComm = $c->fetch(PDO::FETCH_ASSOC);
-
-		return new Comment($dataComm);
+		while ($donnees = $c->fetch(PDO::FETCH_ASSOC)) {
+			$comms[] = new Comment($donnees);
+		}
+		return $comms;
 	}
 
 	// UPDATE
@@ -49,13 +51,40 @@ class CommentManager {
 
 	public function getComments() {
 		$chaps = [];
-		$q = Database::getPDO()->query('SELECT * FROM comment ORDER BY id DESC');
+		$c = Database::getPDO()->query('SELECT * FROM comment ORDER BY id DESC');
 
-		while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
+		while ($donnees = $c->fetch(PDO::FETCH_ASSOC)) {
 			$chaps[] = new Comment($donnees);
 		}
 		return $chaps;
 	}
 
+	public function getIdComm($id) {
+		$comms = [];
+		$c = Database::getPDO()->query('SELECT * FROM comment WHERE id =' .$id);
+
+		while ($donnees = $c->fetch(PDO::FETCH_ASSOC)) {
+			$comms[] = new Comment($donnees);
+		}
+		return $comms;
+	}
+
+	public function signaler(Comment $comm) {
+		$c = Database::getPDO()->prepare('INSERT INTO signaler(id_comment) VALUES (:id_comment)');
+
+		$c->bindValue(':id_comment', $comm->idComment());
+		$c->execute();
+	}
+
+	public function getSignaler() {
+		$comms = [];
+		$c = Database::getPDO()->query('SELECT id_comment FROM signaler');
+		$c->execute();
+		
+		while ($donnees = $c->fetch(PDO::FETCH_ASSOC)) {
+			$comms[] = new Comment($donnees);
+		}
+		return $comms;
+	}
 
 }

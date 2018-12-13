@@ -3,7 +3,6 @@
 class AdminController {
 
 	public static function login() {
-
 		if(isset($_POST['send-log'])) {
 			if (isset($_POST['pseudo-log'], $_POST['mdp-log'])) {
 				if(!empty($_POST['pseudo-log']) AND !empty($_POST['mdp-log'])) {
@@ -91,12 +90,15 @@ class AdminController {
 	}
 
 	public static function deleteUser() {
-		$newUser2 = new User([
-			'id' => htmlspecialchars($_GET['id'])
-		]);
+		if (isset($_POST['delete-user'])) {
+			$newUser2 = new User([
+				'id' => htmlspecialchars($_GET['id'])
+			]);
 
-		$newUserManager = new UserManager();
-		$delUser = $newUserManager->delete($newUser2);
+			$newUserManager = new UserManager();
+			$delUser = $newUserManager->delete($newUser2);
+			header('Location: admin.php?p=usersView');
+		}
 	}
 
 
@@ -104,9 +106,12 @@ class AdminController {
 	// EDIT POSTS
 
 	public static function getLists() {
+		// Liste des posts
 		$list = new PostManager();
 		$posts = $list->getPost();
 
+
+		// Liste des comments
 		$commManager = new CommentManager();
 		$comments = $commManager->getComments();
 		require 'view/back/postEditView.php';
@@ -157,27 +162,52 @@ class AdminController {
 		}
 	}
 
-	public static function deletePost() {
-		$newPost2 = new Post([
-			'id' => htmlspecialchars($_GET['id']),
-		]);
 
-		$newPostManager2 = new PostManager();
-		$delPost = $newPostManager2->delete($newPost2);
+
+
+	public static function deleteEdit() {
+		if (isset($_POST['delete-post'])) {
+			$newPost2 = new Post([
+				'id' => htmlspecialchars($_GET['id']),
+			]);
+
+			$newPostManager2 = new PostManager();
+			$delPost = $newPostManager2->delete($newPost2);
+			header('Location: admin.php?p=postEditView'); 
+		}
+
+
+		if (isset($_POST['delete-comment'])) {
+			$newComment = new Comment([
+				'id' => htmlspecialchars($_GET['id']),
+			]);
+
+			$newCommManager = new CommentManager();
+			$delComment = $newCommManager->delete($newComment);
+		}
 	}
 
 
+	/*public static function getSignaler() {
+			$getSign = new CommentManager();
+			$getSignM = $getSign->getSignaler();
+
+			require 'view/back/postEditView.php';
+	}
 
 	// EDIT COMMENTS
 
-	public static function deleteComment() {
-		$newComment = new Comment([
-			'id' => htmlspecialchars($_GET['id']),
-		]);
+	/*public static function deleteComment() {
+		if (isset($_POST['delete-comment'])) {
+			$newComment = new Comment([
+				'id' => htmlspecialchars($_GET['id']),
+			]);
 
-		$newCommManager = new CommentManager();
-		$delComment = $newCommManager->delete($newComment);
-	}
+			$newCommManager = new CommentManager();
+			$delComment = $newCommManager->delete($newComment);
+			header('Location: admin.php?p=postEditView'); 
+		}
+	}*/
 
 }
 

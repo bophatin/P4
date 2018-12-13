@@ -6,6 +6,8 @@ class Comment {
 	private $_name;
 	private $_date_comment;
 	private $_content_comment;
+	private $_id_post;
+	private $_id_comment;
 
 
 	public function __construct(array $donnees) {
@@ -24,6 +26,12 @@ class Comment {
 		}
 		if (isset($donnees['content_comment'])) {
 		    $this->setContentComment($donnees['content_comment']);
+		}
+		if (isset($donnees['id_post'])) {
+		    $this->setIdPost($donnees['id_post']);
+		}
+		if (isset($donnees['id_comment'])) {
+		    $this->setIdComment($donnees['id_comment']);
 		}
 
 		foreach ($donnees as $key => $value) {
@@ -52,6 +60,14 @@ class Comment {
 		return $this->_content_comment;
 	}
 
+	public function idPost() {
+		return $this->_id_post;
+	}
+
+	public function idComment() {
+		return $this->_id_comment;
+	}
+
 
 	// LISTE DES SETTERS
 	public function setId($id) {
@@ -78,6 +94,20 @@ class Comment {
 	public function setContentComment($contentComment) {
 		if (is_string($contentComment)) {
 			$this->_content_comment = $contentComment;
+		}
+	}
+
+	public function setIdPost($idPost) {
+		$idPost = (int) $idPost;
+		if ($idPost > 0) {
+			$this->_id_post = $idPost;
+		}
+	}
+
+	public function setIdComment($idComment) {
+		$idComment = (int) $idComment;
+		if ($idComment > 0) {
+			$this->_id_comment = $idComment;
 		}
 	}
 

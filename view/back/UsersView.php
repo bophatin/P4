@@ -17,9 +17,9 @@
 		<h1>Users</h1>
 		<nav>
 			<ul>
-				<li><a href="admin.php?p=postEditView">Posts List</li>
-				<li><a href="admin.php?p=postEditView#wrapper-3">Comments List</li>
-				<li><a href="admin.php?p=usersView">Users</a></li>
+				<li><a class="js-scrollTo" href="admin.php?p=postEditView">Posts List</li>
+				<li><a class="js-scrollTo" href="admin.php?p=postEditView#wrapper-3">Comments List</li>
+				<li><a class="js-scrollTo" href="admin.php?p=usersView">Users</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -51,7 +51,7 @@
 						<a href="admin.php?p=updateUserView&id=<?=$userList->id();?>"><input type="submit" name="update" value="update" class="button-tab"></a>
 					</td>
 					<td>
-						<form method="post" action="supprimer.php?id=<?=$userList->id();?>" >
+						<form method="post" action="admin.php?p=usersView&id=<?=$userList->id();?>" >
 							<input type="submit" name="delete-user" value="delete" class="button-tab"/>
 						</form>
 					</td>
