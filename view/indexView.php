@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="public/style.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 	<title>Jean Forteroche</title>
 </head>
@@ -21,7 +22,7 @@
 			<ul>
 				<li><a href="index.php?p=allPostsView">Articles</a></li>
 				<li><a class="js-scrollTo" href="#wrapper-2">Biographie</li>
-				<li><a class="js-scrollTo" href="#wrapper-3">Contact</li>
+				<li><a class="js-scrollTo" href="#wrapper-5">Contact</li>
 			</ul>
 		</nav>
 	</header>
@@ -40,22 +41,22 @@
 
 		<div class="container-2">
 			<div class="left-art">
-				<h2>Who is Jeanjean ?</h2>
-				<p class="txt-post">Jusqu’au jour du Drame, il y avait deux familles Goldman. Les Goldman-de-Baltimore et les Goldman-de-Montclair. Les Goldman-de-Montclair, dont est issu Marcus Goldman, l’auteur de La Vérité sur l’Affaire Harry Quebert, sont une famille de la classe moyenne, habitant une petite maison à Montclair, dans le New Jersey. Les Goldman-de-Baltimore sont une famille prospère à qui tout sourit, vivant dans une luxueuse maison d’une banlieue riche de Baltimore, à qui Marcus vouait une admiration sans borne. <br/><br/>
-				Huit ans après le Drame, c’est l’histoire de sa famille que Marcus Goldman décide cette fois de raconter, lorsqu’en février 2012, il quitte l’hiver new-yorkais pour la chaleur tropicale de Boca Raton, en Floride, où il vient s’atteler à son prochain roman. <br/><br/>
-				Au gré des souvenirs de sa jeunesse, Marcus revient sur la vie et le destin des Goldman-de-Baltimore et la fascination qu’il éprouva jadis pour cette famille de l’Amérique huppée, entre les vacances à Miami, la maison de vacances dans les Hamptons et les frasques dans les écoles privées. Mais les années passent et le vernis des Baltimore s’effrite à mesure que le Drame se profile. Jusqu’au jour où tout bascule. <br/> <br/>
-				Et cette question qui hante Marcus depuis : qu’est-il vraiment arrivé aux Goldman-de-Baltimore ?</p>
-				<button><a href="index.php?p=allPostsView">Voir tous les articles</a></button>				
+				<h2>Biographie</h2>
+				<p class="txt-post">Joël Dicker est né à Genève en 1985.<br/><br/>Après avoir été diplômé de la Faculté de droit de l’Université de Genève, il décide de se consacrer à l’écriture. Après plusieurs romans refusés par les éditeurs à qui il les soumet, son premier roman, Les derniers jours de nos Pères, paraît finalement en janvier 2012. <br/><br/>
+				Son deuxième roman, La Vérité sur l’Affaire Harry Quebert, paraît en septembre 2012. Ce roman, traduit en 40 langues et vendu à 5 millions d’exemplaires à travers le monde, sera récompensé en France du Prix de la Vocation de la Fondation Bleustein-Blanchet, du Grand Prix du roman de l’Académie française et du Prix Goncourt des Lycéens. <br/><br/>
+				En 2015, paraît Le Livre des Baltimore, son troisième roman. Son quatrième roman, La Disparition de Stephanie Mailer, paraît en mars 2018. La Vérité sur l’Affaire Harry Quebert est en cours d’adaptation en série télévisée. Produite par la MGM et réalisée par Jean-Jacques Annaud, avec Patrick Dempsey dans le rôle de Harry Quebert.<br/><br/>
+				En 2015, paraît Le Livre des Baltimore, son troisième roman. Son quatrième roman, La Disparition de Stephanie Mailer, paraît en mars 2018. La Vérité sur l’Affaire Harry Quebert est en cours d’adaptation en série télévisée.</p>
+				<button><a href="index.php?p=allPostsView">Lire ses articles</a></button>				
 			</div>
 			<div class="right-art">
 				<div class="container-art">
 					<div class="art-1">
 						<div class="num-art"><span>01</span></div>
-						<article class="art"></article>
+						<article class="art"><img src="public/img/jean-1.jpg"></article>
 					</div>
 					<div class="art-1">
 						<div class="num-art"><span>02</span></div>
-						<article class="art"></article>
+						<article class="art"><img src="public/img/jean-2.jpg"></article>
 					</div>
 				</div>
 			</div>
@@ -64,43 +65,72 @@
 
 	<section id="wrapper-3">
 		<h3 class="title-3">Meet me</h3>
-		<div class="container-3">
-			<div class="left-tab">
-				<p>Autograph Tour</p>
-			</div>
-			<div class="right-tab">
-				<table>
-					<tr>
-						<td>Paris</td>
-						<td>Hôtel de Ville</td>
-						<td>22 février 2019</td>
-					</tr>
-					<tr>
-						<td>Bhoutan</td>
-						<td>Taktshang</td>
-						<td>30 mars 2019</td>
-					</tr>
-					<tr>
-						<td>Tel Aviv</td>
-						<td>Jaffa</td>
-						<td>12 mai 2019</td>
-					</tr>
-					<tr>
-						<td>Phnom Penh</td>
-						<td>Palais Royal</td>
-						<td>9 juillet 2019</td>
-					</tr>
-					<tr>
-						<td>Bogota</td>
-						<td>Place Bolivar</td>
-						<td>10 octobre 2019</td>
-					</tr>
-				</table>
+		<p class="under-title-3">Autograph Tour</p>
+		<div class="right-tab">
+			<table>
+				<tr>
+					<td>Paris</td>
+					<td>Hôtel de Ville</td>
+					<td>22 février 2019</td>
+				</tr>
+				<tr>
+					<td>Bhoutan</td>
+					<td>Taktshang</td>
+					<td>30 mars 2019</td>
+				</tr>
+				<tr>
+					<td>Tel Aviv</td>
+					<td>Jaffa</td>
+					<td>12 mai 2019</td>
+				</tr>
+				<tr>
+					<td>Phnom Penh</td>
+					<td>Palais Royal</td>
+					<td>9 juillet 2019</td>
+				</tr>
+				<tr>
+					<td>Bogota</td>
+					<td>Place Bolivar</td>
+					<td>10 octobre 2019</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<section id="wrapper-4">
+	<div class="num-art"><span>#JeanForteroche</span></div>
+		<div class="slider">
+			<div class="slides">
+				<div class="slide"><img src="public/img/livre-1.jpg" alt=""></div>
+				<div class="slide"><img src="public/img/livre-2.jpg" alt=""></div>
+				<div class="slide"><img src="public/img/livre-3.jpg" alt=""></div>
 			</div>
 		</div>
 	</section>
 
-
+	<section id="wrapper-5">
+		<div class="container-5">
+			<div class="left-contain">
+				<h4>Contact</h4>
+				<form method="post" action="">
+					<input type="text" name="email-contact" placeholder="Votre email" class="input"/>
+					<textarea name="message-contact" rows="4" cols="50" placeholder="Message"></textarea>
+					<input type="submit" name="send-contact" value="send message"/>
+				</form> 
+			</div>
+			<div class="right-contain">
+				<p class="p-foot">Jean Forteroche, 2018.</p>
+				<div class="rs">
+					<p>Stay in touch</p>
+					<div class="rs-icons">
+						<span><i class="fab fa-twitter"></i></span>
+						<span><i class="fab fa-facebook-f"></i></span>
+						<span><i class="fab fa-google-plus-g"></i></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" href="public/js/anim.js"></script>
 	<script type='text/javascript' src='public/js/anim.js'></script>
