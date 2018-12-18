@@ -26,4 +26,8 @@ switch($p) {
 	case 'postView':
 	FrontController::getArt();
 	break;
+
+	case '404View' :
+	require 'view/404View.php';
+	break;
 }

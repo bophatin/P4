@@ -16,19 +16,19 @@
 <body>
 
 	<header>
-		<h1 class="title">Chapitre <?= $datas->id(); ?></h1>
+		<h1 class="title">Chapitre <?= $post->id(); ?></h1>
 		<nav>
 			<ul>
-				<li><?= $datas->title(); ?></li>
-				<li>Paru le <?= $datas->datePost(); ?></li>
+				<li><?= $post->title(); ?></li>
+				<li>Paru le <?= $post->datePost(); ?></li>
 			</ul>
 		</nav>
 	</header>
 
 	<section>
 		<div class="container-art">
-			<button class="back-button"><a href="index.php?p=allPostsView">Retour</a></button>
-			<p class="content"><?= $datas->contentPost(); ?></p>
+			<a href="index.php?p=allPostsView" class="back-button">Retour</a>
+			<p class="content"><?= $post->contentPost(); ?></p>
 		</div>
 	</section>
 

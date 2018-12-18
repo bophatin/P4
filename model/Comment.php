@@ -20,20 +20,6 @@ class Comment {
 
 
 	public function hydrate(array $donnees) {
-
-		if (isset($donnees['name'])) {
-		    $this->setContentComment($donnees['name']);
-		}
-		if (isset($donnees['content_comment'])) {
-		    $this->setContentComment($donnees['content_comment']);
-		}
-		if (isset($donnees['id_post'])) {
-		    $this->setIdPost($donnees['id_post']);
-		}
-		if (isset($donnees['id_comment'])) {
-		    $this->setIdComment($donnees['id_comment']);
-		}
-
 		foreach ($donnees as $key => $value) {
 			$method = 'set' .ucfirst($key);
 			if (method_exists($this, $method)) {
@@ -83,7 +69,7 @@ class Comment {
 		}
 	}
 
-	public function setDateComment($dateComment) {
+	public function setDate_comment($dateComment) {
 		$dateComment = DateTime::createFromFormat('Y-m-d H:i:s', '2009-02-15 15:16:17');
 		$dateComment = $dateComment->format('Y-m-d H:i:s');
 		if ($dateComment) {
@@ -91,13 +77,13 @@ class Comment {
     	}
 	}
 
-	public function setContentComment($contentComment) {
+	public function setContent_comment($contentComment) {
 		if (is_string($contentComment)) {
 			$this->_content_comment = $contentComment;
 		}
 	}
 
-	public function setIdPost($idPost) {
+	public function setId_post($idPost) {
 		$idPost = (int) $idPost;
 		if ($idPost > 0) {
 			$this->_id_post = $idPost;

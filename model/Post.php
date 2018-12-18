@@ -19,16 +19,6 @@ class Post {
 
 	// Hydratation de l'objet en passant des valeurs
 	public function hydrate(array $donnees) {
-		if (isset($donnees['id'])) {
-		    $this->setId($donnees['id']);
-		}
-		if (isset($donnees['title_post'])) {
-		    $this->setTitle($donnees['title_post']);
-		}
-		if (isset($donnees['content_post'])) {
-		    $this->setContentPost($donnees['content_post']);
-		}
-
 		foreach($donnees as $key => $value) {
 			$method = 'set'.ucfirst($key);
 			if (method_exists($this, $method)) {
@@ -73,7 +63,7 @@ class Post {
 		}
 	}
 
-	public function setDatePost($datePost) {
+	public function setDate_post($datePost) {
 		/*// On convertit la date dans le bon format
 		$format = 'Y-m-d';
 		$datePost = DateTime::createFromFormat($format, '2018-12-12');
@@ -89,7 +79,7 @@ class Post {
     	}
 	}
 
-	public function setContentPost($contentPost) {
+	public function setContent_post($contentPost) {
 		if (is_string($contentPost)) {
 			$this->_content_post = $contentPost;
 		}

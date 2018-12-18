@@ -31,7 +31,7 @@
 					<div class="extrait-art">
 						<p class="title-art"><?= $post->title(); ?></p>
 						<p><?= substr($post->contentPost(), 0, 300) .'...' ?></p>
-						<button><a href="index.php?p=postView&id=<?=$post->id();?>">Lire le chapitre</a></button>	
+						<div class="btn"><a href="index.php?p=postView&id=<?=$post->id();?>">Lire le chapitre</a></div>	
 					</div>
 			</article>
 

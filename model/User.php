@@ -17,13 +17,6 @@ class User {
 
 
 	public function hydrate(array $donnees) {
-		/*if (isset($donnees['id'])) {
-		    $this->setId($donnees['id']);
-		}*/
-		if (isset($donnees['name_admin'])) {
-		    $this->setNameAdmin($donnees['name_admin']);
-		}
-		
 		foreach ($donnees as $key => $value) {
 			$method = 'set' .ucfirst($key);
 			if (method_exists($this, $method)) {
@@ -55,7 +48,7 @@ class User {
 		}
 	}
 
-	public function setNameAdmin($nameAdmin) {
+	public function setName_admin($nameAdmin) {
 		if (is_string($nameAdmin)) {
 			return $this->_name_admin = $nameAdmin;
 		}

@@ -16,7 +16,7 @@ class FrontController {
 
 			// AFFICHAGE DE L'ARTICLE EN FONCTION DU POST CLIQUÉ
 			$article = new PostManager();
-			$datas = $article->get($id);
+			$post = $article->get($id);
 
 
 			// ENVOI D'UN COMMENTAIRE
