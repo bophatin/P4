@@ -65,6 +65,7 @@
 					<td><label for="id"><?= $comment->id(); ?></label></td>
 					<td><?= $comment->name(); ?></td>
 					<td><?= $comment->contentComment(); ?></td>
+					<td><?= $comment->signaler(); ?></td>
 					<td><form method="post" action="admin.php?p=postEditView&id=<?=$comment->id();?>" ><input type="submit" name="delete-comment" value="delete" class="butt-link"/></form></td>
 				</tr>
 				<?php endforeach ?>

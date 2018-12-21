@@ -23,13 +23,13 @@ class AdminController {
 					if($validPwd) {
 						header('Location:admin.php?p=postEditView');
 					} else {
-						echo "Identifiants incorrects";
+						echo "<script> alert('Identifiants incorrects') </script>";
 					}
 				} else {
-					echo 'Vous devez remplir tous les champs afin de pouvoir vous connecter';
+					echo "<script> alert('Vous devez remplir tous les champs afin de pouvoir vous connecter') </script>";
 				}
 			} else {
-				echo "Erreur";
+				require 'view/404View.php';
 			}
 		}
 	}
@@ -50,8 +50,10 @@ class AdminController {
 					$addUser = $addUserManager->add($newUser);
 					header('Location: admin.php?p=usersView'); 
 				} else {
-					echo "Veuillez remplir tous les champs";
+					echo "<script> alert('Veuillez remplir tous les champs') </script>";
 				}
+			} else {
+				require 'view/404View.php';
 			}
 		} 
 	}
@@ -70,6 +72,8 @@ class AdminController {
 			$getUserManager = new UserManager();
 			$getUser = $getUserManager->get($id);
 			require 'view/back/updateUserView.php';
+		} else {
+			require 'view/404View.php';
 		}
 	}
 
@@ -85,7 +89,9 @@ class AdminController {
 				$newUpUserManager = new UserManager();
 				$UpdateUser = $newUpUserManager->update($newUpUser);
 				header('Location: admin.php?p=usersView'); 
-			} 
+			} else {
+				require 'view/404View.php';
+			}
 		}
 	}
 
@@ -124,6 +130,8 @@ class AdminController {
 			$getPostManager = new PostManager();
 			$getPost = $getPostManager->get($id);
 			require 'view/back/updatePostView.php';
+		} else {
+			require 'view/404View.php';
 		}
 	}
 
@@ -140,8 +148,10 @@ class AdminController {
 					$addNewPost = $newPostManager->add($newPost);
 					header('Location: admin.php?p=postEditView'); 
 				} else {
-					echo "Veuillez remplir tous les champs";
+					echo "<script> alert('Veuillez remplir tous les champs') </script>";
 				}
+			} else {
+				require 'view/404View.php';
 			}
 		}
 	}

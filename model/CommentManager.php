@@ -38,6 +38,15 @@ class CommentManager {
 		$c->execute();
 	}
 
+	public function upSignaler(Comment $comm) {
+		$c = Database::getPDO()->prepare('UPDATE comment SET signaler = :signaler+1 WHERE id = :id');
+
+		$c->bindValue(':signaler', $comm->signaler());
+		$c->bindValue(':id', $comm->id());
+		
+		$c->execute();
+	}
+
 	// DELETE
 	public function delete(Comment $comm) {
 		$c = Database::getPDO()->prepare('DELETE FROM comment WHERE id =' .$comm->id());
@@ -63,24 +72,6 @@ class CommentManager {
 		$comms = [];
 		$c = Database::getPDO()->query('SELECT * FROM comment WHERE id =' .$id);
 
-		while ($donnees = $c->fetch(PDO::FETCH_ASSOC)) {
-			$comms[] = new Comment($donnees);
-		}
-		return $comms;
-	}
-
-	public function signaler(Comment $comm) {
-		$c = Database::getPDO()->prepare('INSERT INTO signaler(id_comment) VALUES (:id_comment)');
-
-		$c->bindValue(':id_comment', $comm->idComment());
-		$c->execute();
-	}
-
-	public function getSignaler() {
-		$comms = [];
-		$c = Database::getPDO()->query('SELECT id_comment FROM signaler');
-		$c->execute();
-		
 		while ($donnees = $c->fetch(PDO::FETCH_ASSOC)) {
 			$comms[] = new Comment($donnees);
 		}

@@ -36,12 +36,12 @@ class FrontController {
 						header('Location: index.php?p=postView&id='.$id); 
 						echo "Votre commentaire a bien été posté";
 					} else {
-						echo "Tous les champs doivent être complétés";
+						echo "<script> alert('Tous les champs doivent être complétés') </script>";
 					}
+				} else {
+					require 'view/404View.php';
 				}
 			} 
-
-
 
 			// AFFICHAGE DES COMMENTAIRE EN FONCTION DU POST CLIQUÉ
 			$commManager = new CommentManager();
@@ -49,7 +49,7 @@ class FrontController {
 			require 'view/postView.php';
 
 		} else {
-			die('Erreur'); // Mettre page 404
+			require 'view/404View.php';
 		}
 	}
 

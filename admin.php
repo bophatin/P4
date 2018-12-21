@@ -35,9 +35,7 @@ switch($p) {
 	case 'postEditView':
 	AdminController::addPost();
 	AdminController::getLists();
-	/*AdminController::getSignaler();*/
 	AdminController::deleteEdit();
-	/*AdminController::deleteComment();*/
 	break;
 
 	case 'updatePostView':

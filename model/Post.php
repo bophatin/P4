@@ -64,16 +64,8 @@ class Post {
 	}
 
 	public function setDate_post($datePost) {
-		/*// On convertit la date dans le bon format
-		$format = 'Y-m-d';
-		$datePost = DateTime::createFromFormat($format, '2018-12-12');
+    	$datePost = DateTime::createFromFormat('Y-m-d', $datePost);
 		$datePost = $datePost->format('Y-m-d');
-		// On vérifie qu'il s'agit bien d'une date
-		if ($datePost) {
-        	$this->_date_post = $datePost;
-    	}*/
-    	$datePost = DateTime::createFromFormat('Y-m-d H:i:s', '2009-02-15 15:16:17');
-		$datePost = $datePost->format('Y-m-d H:i:s');
 		if ($datePost) {
         	$this->_date_post = $datePost;
     	}

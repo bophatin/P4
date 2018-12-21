@@ -8,6 +8,7 @@ class Comment {
 	private $_content_comment;
 	private $_id_post;
 	private $_id_comment;
+	private $_signaler;
 
 
 	public function __construct(array $donnees) {
@@ -54,6 +55,10 @@ class Comment {
 		return $this->_id_comment;
 	}
 
+	public function signaler() {
+		return $this->_signaler;
+	}
+
 
 	// LISTE DES SETTERS
 	public function setId($id) {
@@ -90,10 +95,16 @@ class Comment {
 		}
 	}
 
-	public function setIdComment($idComment) {
+	public function setId_comment($idComment) {
 		$idComment = (int) $idComment;
 		if ($idComment > 0) {
 			$this->_id_comment = $idComment;
+		}
+	}
+
+	public function setSignaler($signaler) {
+		if (is_string($signaler)) {
+			$this->_signaler = $signaler;
 		}
 	}
 

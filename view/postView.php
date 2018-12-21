@@ -55,7 +55,7 @@
 					<?php foreach($comments as $comment): ?>
 					<td><?= $comment->name(); ?></td>
 					<td><?= $comment->contentComment(); ?></td>
-					<td><a href="script.php?id=<?= $comment->id(); ?>">Signaler</a></td>
+					<td><a href="view/script/script.php?id=<?= $comment->id(); ?>">Signaler</a></td>
 					<?php endforeach ?>
 				</tr>
 			</table>
