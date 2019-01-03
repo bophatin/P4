@@ -25,7 +25,7 @@
 			<ul>
 				<li><a class="js-scrollTo" href="#wrapper-2">Posts List</li>
 				<li><a class="js-scrollTo" href="#wrapper-3">Comments List</li>
-				<li><a class="js-scrollTo" href="admin.php?p=usersView">Users</a></li>
+				<li><a href="admin.php?p=usersView">Users</a></li>
 				<li><a href="view/script/logout.php">Log out</a></li>
 			</ul>
 		</nav>
@@ -84,8 +84,8 @@
 		<p class="footer-name">Jean Forteroche, 2018.</p>
 	</footer>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" href="public/js/anim.js"></script>
-	<script type='text/javascript' src='public/js/anim.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src='/../public/js/anim.js'></script>
 </body>
 
 
