@@ -26,10 +26,7 @@ switch($p) {
 	case 'postView':
 	FrontController::getArt();
 	break;
-}
 
-
-if ($p == false) {
+	default:
 	require 'view/404View.php';
-} 
-
+}
