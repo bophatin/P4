@@ -8,7 +8,6 @@ class Post {
 	private $_content_post;
 
 
-	// Rajouter methode construct et appeler methode d'hydratation dedans 
 	public function __construct($donnees) {
 		if(!empty($donnees)){
         	$this->hydrate($donnees);

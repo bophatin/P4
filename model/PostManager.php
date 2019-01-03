@@ -9,10 +9,9 @@ class PostManager {
 	public function add(Post $chap) {
 		$q = Database::getPDO()->prepare('INSERT INTO post(title, date_post, content_post) VALUES(:title, NOW(), :content_post)'); 
 
-		// Assignation des valeurs pour l'id, le titre, la date, le contenu
 		$q->bindValue(':title', $chap->title());
 		$q->bindValue(':content_post', $chap->contentPost());
-		// Exécution de la requête
+
 		$q->execute();
 	}
 
@@ -32,12 +31,10 @@ class PostManager {
 	public function update(Post $chap) {
 		$q = Database::getPDO()->prepare('UPDATE post SET title = :title, content_post = :content_post WHERE id = :id');
 
-		// Assignation des valeurs à la requête
 		$q->bindValue(':title', $chap->title());
 		$q->bindValue(':content_post', $chap->contentPost());
 		$q->bindValue(':id', $chap->id());
 
-		// Exécution de la requête
 		$q->execute();
 	}
 

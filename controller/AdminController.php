@@ -21,6 +21,9 @@ class AdminController {
 					$validPwd = password_verify($pwd, $mdp);
 
 					if($validPwd) {
+						session_start();
+						$_SESSION['pseudo-log'] = $_POST['pseudo-log'];
+						$_SESSION['mdp-log'] = $_POST['mdp-log'];
 						header('Location:admin.php?p=postEditView');
 					} else {
 						echo "<script> alert('Identifiants incorrects') </script>";
@@ -36,7 +39,6 @@ class AdminController {
 
 
 	// USERS
-
 	public static function addUser() {
 		if(isset($_POST['create'])) {
 			if (isset($_POST['pseudo-add'], $_POST['mdp-add'])) {
@@ -64,7 +66,6 @@ class AdminController {
 		require 'view/back/usersView.php';
 	}
 
-
 	public static function getUserId() {
 		if (isset($_GET['id'])) {
 			$id = htmlspecialchars(($_GET['id']));
@@ -78,7 +79,8 @@ class AdminController {
 	}
 
 	public static function updateUser() {
-		if(isset($_POST['save'])) {
+		if(isset($_POST['update'])) {
+
 			if (isset($_POST['pseudo-new'], $_POST['mdp-new'])) {
 				$newUpUser = new User([
 					'name_admin' => htmlspecialchars($_POST['pseudo-new']),
@@ -108,9 +110,7 @@ class AdminController {
 	}
 
 
-
 	// EDIT POSTS
-
 	public static function getLists() {
 		// Liste des posts
 		$list = new PostManager();
@@ -140,8 +140,8 @@ class AdminController {
 			if (isset($_POST['title'], $_POST['content'])) {
 				if (!empty($_POST['title']) AND !empty($_POST['content'])) {
 					$newPost = new Post([
-						'title' => htmlspecialchars($_POST['title']),
-						'content_post' => htmlspecialchars($_POST['content'])
+						'title' => $_POST['title'],
+						'content_post' => $_POST['content']
 					]);
 
 					$newPostManager = new PostManager();
@@ -172,9 +172,6 @@ class AdminController {
 		}
 	}
 
-
-
-
 	public static function deleteEdit() {
 		if (isset($_POST['delete-post'])) {
 			$newPost2 = new Post([
@@ -186,7 +183,6 @@ class AdminController {
 			header('Location: admin.php?p=postEditView'); 
 		}
 
-
 		if (isset($_POST['delete-comment'])) {
 			$newComment = new Comment([
 				'id' => htmlspecialchars($_GET['id']),
@@ -196,29 +192,6 @@ class AdminController {
 			$delComment = $newCommManager->delete($newComment);
 		}
 	}
-
-
-	/*public static function getSignaler() {
-			$getSign = new CommentManager();
-			$getSignM = $getSign->getSignaler();
-
-			require 'view/back/postEditView.php';
-	}
-
-	// EDIT COMMENTS
-
-	/*public static function deleteComment() {
-		if (isset($_POST['delete-comment'])) {
-			$newComment = new Comment([
-				'id' => htmlspecialchars($_GET['id']),
-			]);
-
-			$newCommManager = new CommentManager();
-			$delComment = $newCommManager->delete($newComment);
-			header('Location: admin.php?p=postEditView'); 
-		}
-	}*/
-
 }
 
 

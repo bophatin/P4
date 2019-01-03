@@ -19,6 +19,7 @@ a {
 header {
 	display: flex;
 	flex-direction: column;
+	background: #dcd6cc;
 }
 
 .title {
@@ -49,23 +50,85 @@ nav li {
 	padding-right: 20px;
 }
 
+.back-button {
+	font-family: 'Roboto', sans-serif;
+	border:none;
+	background: none;
+	margin-left: 20px;
+	top: 20px;
+}
 
-/* SECTION 1 */
+.back-button:hover {
+	border-bottom : 1px solid black;
+}
+
+@media all and (max-width: 1440px) {
+	header {
+		padding-top: 15px;
+	}
+
+	.title {
+		font-size: 130px;
+	}
+
+	nav {
+		margin-top: -60px;
+	}
+}
+
+@media all and (max-width: 1024px) {
+	header {
+		padding-top: 10px;
+	}
+
+	.title {
+		font-size: 100px;
+	}
+}
+
+@media all and (max-width: 770px) {
+	.title {
+		font-size: 70px;
+	}
+
+	nav {
+		margin-top: -10px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	.title {
+		font-size: 50px;
+	}
+
+	nav {
+		margin-top: -10px;
+	}
+
+	nav ul {
+		display: block;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+
+	nav li {
+		margin-bottom: 10px;
+	}
+
+}
+
+/* SECTION 1 article */
+
+#wrapper-art {
+	background: #dcd6cc;
+	max-width: 100%;
+}
 
 .container-art {
 	max-width: 1400px;
-	background: #dcd6cc;
 	margin:auto;
-	margin-top: 50px;
+	padding-top: 70px;
 	padding-bottom: 120px;
-}
-
-.back-button {
-	font-family: 'Cormorant Garamond', sans-serif;
-	font-size: 14px;
-	border:none;
-	background: none;
-	padding: 20px;
 }
 
 .content {
@@ -79,32 +142,63 @@ nav li {
 	line-height: 25px;
 }
 
+@media all and (max-width: 1024px) {
+	.container-art {
+		max-width: 900px;
+	}
 
-/* SECTION 2 = COMMENTAIRES */
+	.content {
+		column-gap: 70px;
+	}
+}
 
-#wrapper-comment {
-	max-width: 1400px;
-	margin: auto;
+@media all and (max-width: 770px) {
+	.container-art {
+		max-width: 650px;
+		padding-top: 30px;
+	}
+
+	.content {
+		max-width: 650px;
+		columns: 0;
+		column-gap: 0px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	.container-art {
+		max-width: 350px;
+		padding-top: 10px;
+		padding-bottom: 60px;
+	}
+
+}
+
+
+/* SECTION 2 = AVIS */
+
+#wrapper {
+	padding-top: 90px;
+	padding-bottom: 90px;
+	position: relative;
+}
+
+.container{
+	display: flex;
+	justify-content: space-between;
+	max-width: 1450px;
+	margin:auto;
+}
+
+.container-left {
+	width: 800px;
+	padding-left: 130px;
 }
 
 h2 {
-	margin: auto;
 	font-family: 'Cormorant Garamond', sans-serif;
 	font-size: 70px;
 	font-weight: normal;
-}
-
-.container-comment {
-	max-width: 500px;
-	margin-top: 100px;
-	padding:30px;
-	margin-bottom: 200px;
-}
-
-.form {
-	max-width: 500px;
-	margin-top: 40px;
-	
 }
 
 label {
@@ -132,7 +226,7 @@ textarea {
 	overflow: hidden;
 }
 
-::-webkit-input-placeholder {
+.placeholder {
 	font-family: 'Roboto', sans-serif;
 	font-size:16px;
 	color: black;
@@ -151,4 +245,259 @@ textarea {
 	margin-top: 50px;
 }
 
+@media all and (max-width: 1440px) {
+	.container{
+		max-width: 1000px;
+	}
 
+	.container-left {
+		width: 500px;
+		padding-left: 0;
+	}
+}
+
+@media all and (max-width: 1024px) {
+	.container{
+		max-width: 900px;
+	}
+}
+
+@media all and (max-width: 770px) {
+	#wrapper {
+		padding-top: 40px;
+	}
+
+	.container{
+		flex-wrap: wrap;
+	}
+
+	.container-left {
+		margin: auto;
+		text-align: center;
+	}
+
+	textarea {
+		text-align: center;
+	}
+
+	.placeholder {
+		margin: auto;
+	}
+}
+
+@media all and (max-width: 480px) {
+	#wrapper {
+		padding-top: 10px;
+		padding-bottom: 30px;
+	}
+}
+
+
+/* commentaires */
+
+.container-right {
+	width: 800px;
+}
+
+h3 {
+	font-family: 'Cormorant Garamond', sans-serif;
+	font-size: 70px;
+	font-weight: normal;
+}
+
+table, td {    
+    border-bottom: 1px solid #D3D3D3;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 600px;
+}
+
+td {
+    padding: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+@media all and (max-width: 1440px) {
+	.container-right {
+		width: 500px;
+	}
+
+	table {
+	    border-collapse: collapse;
+	    width: 500px;
+	}
+}
+
+@media all and (max-width: 770px) {
+	.container-right {
+		margin: auto;
+		text-align: center;
+	}
+
+}
+
+@media all and (max-width: 480px) {
+	.container-right {
+		width: 400px;
+	}
+
+	table {
+	    width: 400px;
+	}
+
+}
+
+
+
+
+/* SECTION 3 FOOTER */
+
+#wrapper-5 {
+	background: #dcd6cc;
+	max-width: 100%;
+}
+
+.container-5 {
+	display: flex;
+	max-width: 1400px;
+	margin:auto;
+	padding:30px;
+}
+
+.left-contain, .right-contain {
+	width: 800px;
+}
+
+.right-contain {
+	position: relative;
+}
+
+h4 {
+	font-family: 'Cormorant Garamond', sans-serif;
+	font-size: 50px;
+	font-weight: normal;
+	margin:0;
+	padding: 0;
+	margin-bottom: 20px;
+}
+
+
+.input {
+	display: flex;
+	flex-direction: column;
+	width: 335px;
+	height: 24px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	padding: 5px;
+	border:none;
+	border-bottom: 1px solid #D3D3D3;
+}
+
+textarea {
+	display: flex;
+	flex-direction: column;
+	width: 335px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	padding: 5px;
+	border:none;
+	border-bottom: 1px solid #D3D3D3;
+}
+
+input[type='submit'] {
+	background: black;
+	color: white;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	width: 130px;
+	height: 40px;
+	border:none;
+	letter-spacing: 1.5px;
+}
+
+.p-foot {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-family: 'Cormorant Garamond', sans-serif;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.rs {
+	position: absolute;
+	right: 0;
+}
+
+.rs p {
+	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.rs-icons {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	right: 0;
+}
+
+span {
+	margin-left: 10px;
+	font-size: 17px;
+}
+
+@media all and (max-width: 1440px) {
+	.container-5 {
+		max-width: 1100px;
+		padding: 80px;
+	}
+}
+
+@media all and (max-width: 1024px) {
+	.container-5 {
+		max-width: 900px;
+		padding: 60px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	#wrapper-5 {
+		margin-top: 0;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-top: 60px;
+	}
+
+	.container-5 {
+		max-width: 480px;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0px;
+		text-align: center;
+	}
+
+	.left-contain, .right-contain {
+		width: 480px;
+	}
+
+	.right-contain {
+		margin-top: 30px;
+	}
+
+	.right-contain, .rs, .rs-icons, .p-foot {
+		position: inherit;
+		text-align: center;
+	}
+
+	.input, textarea {
+		margin: auto;
+		margin-bottom: 20px;
+	}
+}

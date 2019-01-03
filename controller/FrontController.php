@@ -42,12 +42,11 @@ class FrontController {
 					require 'view/404View.php';
 				}
 			} 
-
+				
 			// AFFICHAGE DES COMMENTAIRE EN FONCTION DU POST CLIQUÉ
 			$commManager = new CommentManager();
 			$comments = $commManager->get($id);
 			require 'view/postView.php';
-
 		} else {
 			require 'view/404View.php';
 		}

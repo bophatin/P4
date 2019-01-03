@@ -13,32 +13,32 @@
 </head>
 
 
-
 <body>
-
 	<header>
 		<h1 class="title">Jean Forteroche</h1>
 		<nav>
 			<ul>
 				<li><a href="index.php?p=allPostsView">Articles</a></li>
-				<li><a class="js-scrollTo" href="#wrapper-2">Biographie</li>
-				<li><a class="js-scrollTo" href="#wrapper-5">Contact</li>
+				<li><a class="js-scrollTo" href="#wrapper-2">Biographie</a></li>
+				<li><a class="js-scrollTo" href="#wrapper-5">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
 
-	<section id="wrapper-1">
+
+	<div id="wrapper-1">
 		<div class="container-1">
-			<img src="https://1.bp.blogspot.com/-XkBlFe4aJfs/WyvCukbVOKI/AAAAAAAAoOQ/6-abJfWj7cgBTlY1b0NKorI7pzFEuo1VACLcBGAs/s1600/recessed_bathtub_clay_tiles_casa_modesta_par_photo_joao_carmo_simoes_yatzer.jpg" class="left-bloc"/>
+			<img src="https://1.bp.blogspot.com/-XkBlFe4aJfs/WyvCukbVOKI/AAAAAAAAoOQ/6-abJfWj7cgBTlY1b0NKorI7pzFEuo1VACLcBGAs/s1600/recessed_bathtub_clay_tiles_casa_modesta_par_photo_joao_carmo_simoes_yatzer.jpg" class="left-bloc" alt="Jean Forteroche" />
 			<div class="right-bloc">
 				<p>Jean Forteroche est né à Genève en 1985.<br/><br/>
 				Son deuxième roman, La Vérité sur l’Affaire Harry Quebert, paraît en septembre 2012. Ce roman, traduit en 40 langues et vendu à 5 millions d’exemplaires à travers le monde, sera récompensé en France du Prix de la Vocation de la Fondation Bleustein-Blanchet, du Grand Prix du roman de l’Académie française et du Prix Goncourt des Lycéens.</p>
 			</div>
 		</div>
-	</section>
+	</div>
+
+
 
 	<section id="wrapper-2">
-
 		<div class="container-2">
 			<div class="left-art">
 				<h2>Biographie</h2>
@@ -52,16 +52,17 @@
 				<div class="container-art">
 					<div class="art-1">
 						<div class="num-art"><span>01</span></div>
-						<article class="art"><img src="public/img/jean-1.jpg"></article>
+						<div class="art"><img src="public/img/jean-1.jpg" alt="Jean Forteroche"></div>
 					</div>
 					<div class="art-1">
 						<div class="num-art"><span>02</span></div>
-						<article class="art"><img src="public/img/jean-2.jpg"></article>
+						<div class="art"><img src="public/img/jean-2.jpg" alt="Jean Forteroche"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
 
 	<section id="wrapper-3">
 		<h3 class="title-3">Meet me</h3>
@@ -97,8 +98,9 @@
 		</div>
 	</section>
 
-	<section id="wrapper-4">
-	<div class="num-art"><span>#JeanForteroche</span></div>
+
+	<div id="wrapper-4">
+		<div class="num-art"><span>#JeanForteroche</span></div>
 		<div class="slider">
 			<div class="slides">
 				<div class="slide"><img src="public/img/livre-1.jpg" alt=""></div>
@@ -106,39 +108,42 @@
 				<div class="slide"><img src="public/img/livre-3.jpg" alt=""></div>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section id="wrapper-5">
-		<div class="container-5">
-			<div class="left-contain">
-				<h4>Contact</h4>
-				<form method="post" action="">
-					<input type="text" name="email-contact" placeholder="Votre email" class="input"/>
-					<textarea name="message-contact" rows="4" cols="50" placeholder="Message"></textarea>
-					<input type="submit" name="send-contact" value="send message"/>
-				</form> 
-			</div>
-			<div class="right-contain">
-				<p class="p-foot">Jean Forteroche, 2018.</p>
-				<div class="rs">
-					<p>Stay in touch</p>
-					<div class="rs-icons">
-						<span><i class="fab fa-twitter"></i></span>
-						<span><i class="fab fa-facebook-f"></i></span>
-						<span><i class="fab fa-google-plus-g"></i></span>
+
+	<footer>
+		<section id="wrapper-5">
+			<div class="container-5">
+				<div class="left-contain">
+					<h4>Contact</h4>
+					<form method="post">
+						<input type="text" name="email-contact" placeholder="Votre email" class="input"/>
+						<textarea name="message-contact" rows="4" cols="50" placeholder="Message"></textarea>
+						<input type="submit" name="send-contact" value="send message"/>
+					</form> 
+				</div>
+				<div class="right-contain">
+					<p class="p-foot">Jean Forteroche, 2018.</p>
+					<div class="rs">
+						<p>Stay in touch</p>
+						<div class="rs-icons">
+							<span><i class="fab fa-twitter"></i></span>
+							<span><i class="fab fa-facebook-f"></i></span>
+							<span><i class="fab fa-google-plus-g"></i></span>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	</footer>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" href="public/js/anim.js"></script>
-	<script type='text/javascript' src='public/js/anim.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src='public/js/anim.js'></script>
 </body>
 
 
 
-<footer></footer>
+
 
 
 </html>

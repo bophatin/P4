@@ -74,7 +74,7 @@ nav li {
 	width: 1100px;
 }
 
-h2 {
+h2, h3, h4 {
 	font-family: 'Cormorant Garamond', sans-serif;
 	font-size: 40px;
     font-weight: normal;
@@ -123,6 +123,33 @@ input[type ="submit"].button-add:hover {
 	color: white;
 }
 
+@media all and (max-width: 1024px) {
+	#wrapper, #wrapper-2, #wrapper-3 {
+		max-width: 900px;
+	}
+}
+
+@media all and (max-width: 770px) {
+	#wrapper, #wrapper-2, #wrapper-3 {
+		max-width: 690px;
+	}
+
+	h2, h3, h4 {
+		writing-mode: vertical-rl;
+  		transform: rotate(180deg);
+	}
+}
+
+@media all and (max-width: 480px) {
+	#wrapper, #wrapper-2, #wrapper-3 {
+		max-width: 400px;
+	}
+
+	h2, h3, h4 {
+		display: none;
+	}
+}
+
 /* FORM TABLE */
 
 table, td {    
@@ -156,13 +183,28 @@ input[type="submit"].butt-link:hover {
 	color: red;
 }
 
+.signaler {
+	color: red;
+}
+
+
 /* FOOTER */
 
 footer {
-	width: 100%;
+	position: relative;
+	max-width: 100%;
 	height: 100px;
 }
 
+footer p {
+	position: absolute;
+	bottom: 0;
+	font-family: 'Cormorant Garamond', sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	left: 50%;
+	transform: translateX(-50%);
+}
 
 
 

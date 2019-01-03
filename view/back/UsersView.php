@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -25,8 +27,7 @@
 	</header>
 
 
-	<section id="wrapper-form">
-
+	<div id="wrapper-form">
 		<div class="container-add">
 			<p class="title">Create a user</p>
 			<div class="background-form">
@@ -60,14 +61,11 @@
 				</table>
 			</div>
 		</div>
-
-	</section>
-
+	</div>
+	
+	<footer>
+		<p class="footer-name">Jean Forteroche, 2018.</p>
+	</footer>
 </body>
-
-
-
-<footer></footer>
-
 
 </html>

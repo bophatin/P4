@@ -20,6 +20,18 @@ h1 {
     margin:0;
 }
 
+@media all and (max-width: 1440px) {
+	h1 {
+	    padding: 100px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	h1 {
+	    padding: 40px;
+	    font-size: 90px;
+	}
+}
 
 /* FORMULAIRE */
 
@@ -75,10 +87,11 @@ input:focus {
 	transform: translateX(-50%);
 }
 
-.error-msg {
-	text-align: center;
+@media all and (max-width: 480px) {
+	.background-form {
+		max-width:400px;
+	}
 }
-
 
 /* FOOTER */
 
@@ -101,5 +114,11 @@ footer p {
 @media all and (max-width: 1440px) {
 	footer {
 		height: 90px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	footer p{
+		top: 0;
 	}
 }

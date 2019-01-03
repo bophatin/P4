@@ -61,15 +61,15 @@ p {
 /* FORMULAIRE */
 
 #wrapper-form {
-	font-family: 'Roboto', sans-serif;
 	display: flex;
+	font-family: 'Roboto', sans-serif;
 	max-width: 1200px;
 	margin:auto;
 	margin-top: 60px;
 }
 
 .container-add, .container-modify {
-	width: 50%;  
+	width: 600px;  
 }
 
 .title {
@@ -131,6 +131,25 @@ input:focus {
 	color: white;
 }
 
+@media all and (max-width: 770px) {
+	#wrapper-form {
+		flex-wrap: wrap;
+		max-width: 600px;
+	}
+}
+
+@media all and (max-width: 770px) {
+	#wrapper-form {
+		flex-wrap: wrap;
+		max-width: 600px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	#wrapper-form {
+		max-width: 400px;
+	}
+}
 
 /* FORM UPDATE */
 
@@ -170,6 +189,7 @@ td {
 	color: red;
 }
 
+
 /* FORM DELETE */
 
 input[type=checkbox] {
@@ -198,5 +218,22 @@ input[type=checkbox] {
 }
 
 
+/* FOOTER */
+
+footer {
+	position: relative;
+	max-width: 100%;
+	height: 100px;
+}
+
+footer p {
+	position: absolute;
+	bottom: 0;
+	font-family: 'Cormorant Garamond', sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	left: 50%;
+	transform: translateX(-50%);
+}
 
 

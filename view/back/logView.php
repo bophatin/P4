@@ -28,13 +28,13 @@
 			</form> 
 		</div>
 	</section>
+
+	<footer>
+		<p class="footer-name">Jean Forteroche, 2018.</p>
+	</footer>
 </body>
 
 
-
-<footer>
-	<p class="footer-name">Jean Forteroche, 2018.</p>
-</footer>
 
 
 </html>

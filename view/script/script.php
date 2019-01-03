@@ -23,10 +23,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])) {
 	echo "$alert";
 
 
-	/*header('Location: ' .$_SERVER['HTTP_REFERER']);*/
-
-
-
+	header('Location: ' .$_SERVER['HTTP_REFERER']);
 }
 
 
