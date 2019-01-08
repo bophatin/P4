@@ -26,10 +26,10 @@ class AdminController {
 						$_SESSION['mdp-log'] = $_POST['mdp-log'];
 						header('Location:admin.php?p=postEditView');
 					} else {
-						echo "<script> alert('Identifiants incorrects') </script>";
+						$error = "Identifiants incorrects";
 					}
 				} else {
-					echo "<script> alert('Vous devez remplir tous les champs afin de pouvoir vous connecter') </script>";
+					$error = "Tous les champs doivent être complétés !";
 				}
 			} else {
 				require 'view/404View.php';
