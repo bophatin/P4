@@ -78,9 +78,8 @@ class AdminController {
 		}
 	}
 
-	public static function updateUser() {
+	public static function update() {
 		if(isset($_POST['update'])) {
-
 			if (isset($_POST['pseudo-new'], $_POST['mdp-new'])) {
 				$newUpUser = new User([
 					'name_admin' => htmlspecialchars($_POST['pseudo-new']),
@@ -91,6 +90,22 @@ class AdminController {
 				$newUpUserManager = new UserManager();
 				$UpdateUser = $newUpUserManager->update($newUpUser);
 				header('Location: admin.php?p=usersView'); 
+			} else {
+				require 'view/404View.php';
+			}
+		}
+
+		if(isset($_POST['save-post'])) {
+			if (isset($_POST['title-new'], $_POST['content-new'])) {
+				$newUpPost = new Post([
+					'title' => $_POST['title-new'],
+					'content_post' => $_POST['content-new'],
+					'id' => $_GET['id']
+				]);
+
+				$newUpManager = new PostManager();
+				$updateNewPost = $newUpManager->update($newUpPost);
+				header('Location: admin.php?p=postEditView'); 
 			} else {
 				require 'view/404View.php';
 			}
@@ -156,21 +171,7 @@ class AdminController {
 		}
 	}
 
-	public static function updatePost() {
-		if(isset($_POST['save-post'])) {
-			if (isset($_POST['title-new'], $_POST['content-new'])) {
-				$newUpPost = new Post([
-					'title' => htmlspecialchars($_POST['title-new']),
-					'content_post' => htmlspecialchars($_POST['content-new']),
-					'id' => htmlspecialchars($_GET['id'])
-				]);
 
-				$newUpManager = new PostManager();
-				$updateNewPost = $newUpManager->update($newUpPost);
-				header('Location: admin.php?p=postEditView'); 
-			} 
-		}
-	}
 
 	public static function deleteEdit() {
 		if (isset($_POST['delete-post'])) {

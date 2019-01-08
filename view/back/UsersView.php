@@ -22,6 +22,7 @@
 				<li><a class="js-scrollTo" href="admin.php?p=postEditView">Posts List</li>
 				<li><a class="js-scrollTo" href="admin.php?p=postEditView#wrapper-3">Comments List</li>
 				<li><a class="js-scrollTo" href="admin.php?p=usersView">Users</a></li>
+				<li><a href="view/script/logout.php">Log out</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -31,7 +32,7 @@
 		<div class="container-add">
 			<p class="title">Create a user</p>
 			<div class="background-form">
-				<form method="post" action="" class="form">
+				<form method="post" class="form">
 					<label for="pseudo">PSEUDO</label>
 					<input type="text" name="pseudo-add" id="nom"/>
 					<label for="password">PASSWORD</label>

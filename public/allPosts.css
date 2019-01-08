@@ -143,10 +143,10 @@ a:hover{
 h2 {	
 	position: absolute;
 	font-family: 'Cormorant Garamond', sans-serif;
-	font-size: 80px;
+	font-size: 60px;
 	font-weight: normal;
 	text-align: center;
-	width: 400px;
+	width: 350px;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);

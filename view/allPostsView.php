@@ -32,7 +32,7 @@
 			<div class="container-left"><img src="public/img/jf-office.jpg"></div>
 			<div class="container-right"><img src="public/img/baltimore.jpg"></div>
 		</div>
-		<div class="container-h2"><h2>Le livre de Baltimore</h2></div>
+		<div class="container-h2"><h2>Un billet pour l'Alaska</h2></div>
 	</section>
 
 

@@ -31,10 +31,10 @@
 		</nav>
 	</header>
 
-	<section id="wrapper">
+	<div id="wrapper">
 		<div class="container-h2"><h2>Add a post</h2></div>
 		<div class="container-form">
-			<form method="post" action="">
+			<form method="post">
 				<label for="title">Title</label>
 				<input type="text" name="title"/>
 				<label for="content">Content</label>
@@ -42,7 +42,7 @@
 				<input type="submit" name="addPost" value="CREATE POST" class="button-add">
 			</form>
 		</div>
-	</section>
+	</div>
 
 	<section id="wrapper-2">
 		<div class="container-h2"><h3>Posts list</h2></div>

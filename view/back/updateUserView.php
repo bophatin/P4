@@ -18,11 +18,11 @@
 
 	<h1>Want to update ?</h1>
 
-	<section id="wrapper-form">
+	<div id="wrapper-form">
 		<div class="container-add">
 			<p class="title">Update a user</p>
 			<div class="background-form">
-				<form method="post" action="" class="form">
+				<form method="post" class="form">
 					<label for="pseudo">PSEUDO</label>
 					<input type="text" name="pseudo-new" id="nom" value="<?= $getUser->nameAdmin(); ?>"/>
 					<label for="password">PASSWORD</label>
@@ -31,7 +31,7 @@
 				</form> 
 			</div>
 		</div>
-	</section>
+	</div>
 
 </body>
 

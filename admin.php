@@ -29,7 +29,7 @@ switch($p) {
 
 	case 'updateUserView':
 	AdminController::getUserId();
-	AdminController::updateUser();
+	AdminController::update();
 	break;
 
 	case 'postEditView':
@@ -40,7 +40,7 @@ switch($p) {
 
 	case 'updatePostView':
 	AdminController::getPostId();
-	AdminController::updatePost();
+	AdminController::update();
 	break;
 
 }

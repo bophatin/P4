@@ -39,13 +39,14 @@ class CommentManager {
 	}
 
 	public function upSignaler(Comment $comm) {
-		$c = Database::getPDO()->prepare('UPDATE comment SET signaler = :signaler+1 WHERE id = :id');
+		$c = Database::getPDO()->prepare('UPDATE comment SET signaler = :signaler WHERE id = :id');
 
 		$c->bindValue(':signaler', $comm->signaler());
 		$c->bindValue(':id', $comm->id());
 		
 		$c->execute();
 	}
+
 
 	// DELETE
 	public function delete(Comment $comm) {

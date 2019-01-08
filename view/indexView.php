@@ -18,9 +18,9 @@
 		<h1 class="title">Jean Forteroche</h1>
 		<nav>
 			<ul>
-				<li><a href="index.php?p=allPostsView">Articles</a></li>
 				<li><a class="js-scrollTo" href="#wrapper-2">Biographie</a></li>
 				<li><a class="js-scrollTo" href="#wrapper-5">Contact</a></li>
+				<li><a href="index.php?p=allPostsView">Un billet pour l'Alaska</a></li>
 			</ul>
 		</nav>
 	</header>

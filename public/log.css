@@ -56,7 +56,7 @@ form {
 	margin-top: 90px;
 }
 
-#nom, #mdp {
+#mdp-log, #pseudo-log {
 	display: flex;
 	flex-direction: column;
 	width: 335px;

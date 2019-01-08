@@ -17,17 +17,17 @@
 		<h1>Back Office</h1>
 	</header>
 
-	<section id="form">
+	<div id="form">
 		<div class="background-form">
-			<form method="post" action="">
+			<form method="post">
 			    <label for="pseudo-log">PSEUDO</label>
-			    <input type="text" name="pseudo-log" id="nom"/>
+			    <input type="text" name="pseudo-log" id="pseudo-log"/>
 			    <label for="mdp-log">MOT DE PASSE</label>
-			    <input type="password" name="mdp-log" id="mdp"/>
+			    <input type="password" name="mdp-log" id="mdp-log"/>
 			    <input type="submit" name="send-log" value="CONNEXION" class ="button"/>
 			</form> 
 		</div>
-	</section>
+	</div>
 
 	<footer>
 		<p class="footer-name">Jean Forteroche, 2018.</p>
