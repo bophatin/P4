@@ -26,10 +26,10 @@ class AdminController {
 						$_SESSION['mdp-log'] = $_POST['mdp-log'];
 						header('Location:admin.php?p=postEditView');
 					} else {
-						$error = "Identifiants incorrects";
+						echo "Identifiants incorrects"; // remplacer par une session erreur
 					}
 				} else {
-					$error = "Tous les champs doivent être complétés !";
+					echo "Tous les champs doivent être complétés !";
 				}
 			} else {
 				require 'view/404View.php';
@@ -38,22 +38,17 @@ class AdminController {
 	}
 
 	public static function logout() {
-		if(isset($_GET['pseudo']) AND !empty($_GET['pseudo'])) {
-			session_start();
-			$_SESSION = array();
+		$_SESSION = array();
 
-			die(var_dump($_GET['pseudo']));
-
-			if (ini_get("session.use_cookies")) {
-				$params = session_get_cookie_params();
-				setcookie(session_name(), '', time() - 42000,
-					   $params["path"], $params["domain"],
-					   $params["secure"], $params["httponly"]
-				);
-			}
-			session_destroy();
-			header('Location: admin.php');
+		if (ini_get("session.use_cookies")) {
+			$params = session_get_cookie_params();
+			setcookie(session_name(), '', time() - 42000,
+				$params["path"], $params["domain"],
+				$params["secure"], $params["httponly"]
+			);
 		}
+		session_destroy();
+		header('Location: admin.php');
 	}
 
 
