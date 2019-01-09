@@ -43,5 +43,8 @@ switch($p) {
 	AdminController::update();
 	break;
 
+	case 'logout':
+	AdminController::logout();
+	break;
 }
 

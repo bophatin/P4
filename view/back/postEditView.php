@@ -26,7 +26,7 @@
 				<li><a class="js-scrollTo" href="#wrapper-2">Posts List</li>
 				<li><a class="js-scrollTo" href="#wrapper-3">Comments List</li>
 				<li><a href="admin.php?p=usersView">Users</a></li>
-				<li><a href="admin.php?p=postEditView&pseudo=<?php echo $_SESSION['pseudo-log']?>">Log out</a></li>
+				<li><a href="admin.php?p=logout">Log out</a></li>
 			</ul>
 		</nav>
 	</header>

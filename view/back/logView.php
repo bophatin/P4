@@ -27,8 +27,6 @@
 			    <input type="submit" name="send-log" value="CONNEXION" class ="button"/>
 			</form> 
 		</div>
-		<span class="error-log"><?php echo $error ?></span>
-		<?php var_dump($error) ?>
 	</div>
 
 	<footer>
