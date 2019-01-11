@@ -5,16 +5,16 @@ require 'controller/FrontController.php';
 Autoloader::register();
 
 
-if (isset($_GET['p'])) {
-	$p = $_GET['p'];
+if (isset($_GET['page'])) {
+	$page = $_GET['page'];
 } else {
-	$p = 'indexView';
+	$page = 'indexView';
 }
 
 
-$p === isset($_GET['p']);
+$page === isset($_GET['page']);
 
-switch($p) {
+switch($page) {
 	case 'indexView':
 	require 'view/indexView.php';
 	break;
@@ -25,6 +25,10 @@ switch($p) {
 
 	case 'postView':
 	FrontController::getArt();
+	break;
+
+	case 'signaler':
+	FrontController::signaler();
 	break;
 
 	default:
