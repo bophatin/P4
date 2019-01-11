@@ -42,7 +42,7 @@
 			<article>
 				<p class="post-title">Chap <?= $post->id(); ?> - <?= $post->title(); ?></p>
 				<p class="content-extrait"><?= substr($post->contentPost(), 0, 300) .'...' ?></p>
-				<div class="btn"><a href="index.php?p=postView&id=<?=$post->id();?>">Lire le chapitre</a></div>
+				<div class="btn"><a href="index.php?page=postView&id=<?=$post->id();?>">Lire le chapitre</a></div>
 			</article>
 			<?php endforeach ?>
 		</div>

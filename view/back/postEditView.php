@@ -25,8 +25,8 @@
 			<ul>
 				<li><a class="js-scrollTo" href="#wrapper-2">Posts List</li>
 				<li><a class="js-scrollTo" href="#wrapper-3">Comments List</li>
-				<li><a href="admin.php?p=usersView">Users</a></li>
-				<li><a href="admin.php?p=logout">Log out</a></li>
+				<li><a href="admin.php?page=usersView">Users</a></li>
+				<li><a href="admin.php?page=logout">Log out</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -54,9 +54,9 @@
 					<td><?= $post->title(); ?></td>
 					<td><?= $post->datePost(); ?></td>
 					<td>
-						<a href="admin.php?p=updatePostView&id=<?=$post->id();?>"><input type="submit" name="update-post" value="update" class="butt-link"></a>
+						<a href="admin.php?page=updatePostView&id=<?=$post->id();?>"><input type="submit" name="update-post" value="update" class="butt-link"></a>
 					</td>
-					<td><form method="post" action="admin.php?p=postEditView&id=<?=$post->id();?>"><input type="submit" name="delete-post" value="delete" class="butt-link"/></form></td>
+					<td><form method="post" action="admin.php?page=postEditView&id=<?=$post->id();?>"><input type="submit" name="delete-post" value="delete" class="butt-link"/></form></td>
 				</tr>
 				<?php endforeach ?>
 			</table>
@@ -73,7 +73,7 @@
 					<td><?= $comment->name(); ?></td>
 					<td><?= $comment->contentComment(); ?></td>
 					<td><span class="signaler"><?= $comment->signaler(); ?></span></td>
-					<td><form method="post" action="admin.php?p=postEditView&id=<?=$comment->id();?>" ><input type="submit" name="delete-comment" value="delete" class="butt-link"/></form></td>
+					<td><form method="post" action="admin.php?page=postEditView&id=<?=$comment->id();?>" ><input type="submit" name="delete-comment" value="delete" class="butt-link"/></form></td>
 				</tr>
 				<?php endforeach ?>
 			</table>

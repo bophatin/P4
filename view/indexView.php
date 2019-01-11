@@ -20,7 +20,7 @@
 			<ul>
 				<li><a class="js-scrollTo" href="#wrapper-2">Biographie</a></li>
 				<li><a class="js-scrollTo" href="#wrapper-5">Contact</a></li>
-				<li><a href="index.php?p=allPostsView">Un billet pour l'Alaska</a></li>
+				<li><a href="index.php?page=allPostsView">Un billet pour l'Alaska</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -46,7 +46,7 @@
 				Son deuxième roman, La Vérité sur l’Affaire Harry Quebert, paraît en septembre 2012. Ce roman, traduit en 40 langues et vendu à 5 millions d’exemplaires à travers le monde, sera récompensé en France du Prix de la Vocation de la Fondation Bleustein-Blanchet, du Grand Prix du roman de l’Académie française et du Prix Goncourt des Lycéens. <br/><br/>
 				En 2015, paraît Le Livre des Baltimore, son troisième roman. Son quatrième roman, La Disparition de Stephanie Mailer, paraît en mars 2018. La Vérité sur l’Affaire Harry Quebert est en cours d’adaptation en série télévisée. Produite par la MGM et réalisée par Jean-Jacques Annaud, avec Patrick Dempsey dans le rôle de Harry Quebert.<br/><br/>
 				En 2015, paraît Le Livre des Baltimore, son troisième roman. Son quatrième roman, La Disparition de Stephanie Mailer, paraît en mars 2018. La Vérité sur l’Affaire Harry Quebert est en cours d’adaptation en série télévisée.</p>
-				<div class="btn"><a href="index.php?p=allPostsView">Lire ses articles</a></div>			
+				<div class="btn"><a href="index.php?page=allPostsView">Lire ses articles</a></div>			
 			</div>
 			<div class="right-art">
 				<div class="container-art">

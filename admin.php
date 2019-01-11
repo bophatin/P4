@@ -6,18 +6,17 @@ Autoloader::register();
 
 
 
-if (isset($_GET['p'])) {
-	$p = $_GET['p'];
+if (isset($_GET['page'])) {
+	$page = $_GET['page'];
 } else {
-	$p = 'logView';
+	$page = 'logView';
 }
 
 
-$p === isset($_GET['p']);
+$page === isset($_GET['page']);
 
-switch($p) {
+switch($page) {
 	case 'logView':
-	require 'view/back/logView.php';
 	AdminController::login();
 	break;
 

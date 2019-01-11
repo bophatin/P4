@@ -87,6 +87,14 @@ input:focus {
 	transform: translateX(-50%);
 }
 
+.error-msg {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	padding-top: 20px; 
+}
+
 @media all and (max-width: 480px) {
 	.background-form {
 		max-width:400px;

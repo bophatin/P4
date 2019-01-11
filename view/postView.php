@@ -17,7 +17,7 @@
 		<h1 class="title">Chapitre <?= $post->id(); ?></h1>
 		<nav>
 			<ul>
-				<li><a href="index.php?p=allPostsView" class="back-button">Retour</a></li>
+				<li><a href="index.php?page=allPostsView" class="back-button">Retour</a></li>
 				<li><?= $post->title(); ?></li>
 				<li>Paru le <?= $post->datePost(); ?></li>
 			</ul>
@@ -44,6 +44,7 @@
 								<br/>
 								<input type="submit" name="send-comment" value="envoyer" class="button">
 							</form>
+							<span><?php echo $error ?></span>
 						</div>
 					</div>
 				</section>
@@ -57,7 +58,7 @@
 							<tr>
 								<td><?= $comment->name(); ?></td>
 								<td><?= $comment->contentComment(); ?></td>
-								<td><a href="view/script/script.php?id=<?= $comment->id(); ?>">Signaler</a></td>
+								<td><a href="index.php?page=signaler&id=<?=$comment->id()?>">Signaler</a></td>
 							</tr>
 							<?php endforeach ?>
 						</table>

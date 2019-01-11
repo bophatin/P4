@@ -24,20 +24,22 @@ class AdminController {
 						session_start();
 						$_SESSION['pseudo-log'] = $_POST['pseudo-log'];
 						$_SESSION['mdp-log'] = $_POST['mdp-log'];
-						header('Location:admin.php?p=postEditView');
+						header('Location:admin.php?page=postEditView');
 					} else {
-						echo "Identifiants incorrects"; // remplacer par une session erreur
+						$error = "Identifiants incorrects"; 
 					}
 				} else {
-					echo "Tous les champs doivent être complétés !";
+					$error = "Tous les champs doivent être complétés !";
 				}
 			} else {
 				require 'view/404View.php';
 			}
 		}
+		require 'view/back/logView.php';
 	}
 
 	public static function logout() {
+		session_start();
 		$_SESSION = array();
 
 		if (ini_get("session.use_cookies")) {
@@ -65,9 +67,9 @@ class AdminController {
 
 					$addUserManager = new UserManager();
 					$addUser = $addUserManager->add($newUser);
-					header('Location: admin.php?p=usersView'); 
+					header('Location: admin.php?page=usersView'); 
 				} else {
-					echo "<script> alert('Veuillez remplir tous les champs') </script>";
+					echo  "Tous les champs doivent être complétés !";
 				}
 			} else {
 				require 'view/404View.php';
@@ -104,7 +106,7 @@ class AdminController {
 
 				$newUpUserManager = new UserManager();
 				$UpdateUser = $newUpUserManager->update($newUpUser);
-				header('Location: admin.php?p=usersView'); 
+				header('Location: admin.php?page=usersView'); 
 			} else {
 				require 'view/404View.php';
 			}
@@ -120,7 +122,7 @@ class AdminController {
 
 				$newUpManager = new PostManager();
 				$updateNewPost = $newUpManager->update($newUpPost);
-				header('Location: admin.php?p=postEditView'); 
+				header('Location: admin.php?page=postEditView'); 
 			} else {
 				require 'view/404View.php';
 			}
@@ -135,7 +137,7 @@ class AdminController {
 
 			$newUserManager = new UserManager();
 			$delUser = $newUserManager->delete($newUser2);
-			header('Location: admin.php?p=usersView');
+			header('Location: admin.php?page=usersView');
 		}
 	}
 
@@ -145,7 +147,6 @@ class AdminController {
 		// Liste des posts
 		$list = new PostManager();
 		$posts = $list->getPost();
-
 
 		// Liste des comments
 		$commManager = new CommentManager();
@@ -176,7 +177,7 @@ class AdminController {
 
 					$newPostManager = new PostManager();
 					$addNewPost = $newPostManager->add($newPost);
-					header('Location: admin.php?p=postEditView'); 
+					header('Location: admin.php?page=postEditView'); 
 				} else {
 					echo "<script> alert('Veuillez remplir tous les champs') </script>";
 				}
@@ -196,7 +197,7 @@ class AdminController {
 
 			$newPostManager2 = new PostManager();
 			$delPost = $newPostManager2->delete($newPost2);
-			header('Location: admin.php?p=postEditView'); 
+			header('Location: admin.php?page=postEditView'); 
 		}
 
 		if (isset($_POST['delete-comment'])) {
