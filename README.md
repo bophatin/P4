@@ -1,3 +1,2 @@
 # Interface front + espace admin
-> archi MVC
-> POO
+archi MVC + POO
